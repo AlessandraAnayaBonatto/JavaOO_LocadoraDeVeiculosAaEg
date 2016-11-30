@@ -5,32 +5,17 @@
  */
 package javaoo_locadoradeveiculosaaeg.git;
 
-import java.util.ArrayList;
-import java.util.List;
-import javaoo_locadoradeveiculosaaeg.git.models.ClientePessoaFisicaModel;
-import javaoo_locadoradeveiculosaaeg.git.models.ClientePessoaJuridicaModel;
-import javaoo_locadoradeveiculosaaeg.git.models.PessoaFisica;
-import javaoo_locadoradeveiculosaaeg.git.models.PessoaJuridica;
-
 /**
- Classe criada para armazenamento das informações inseridas no sistema
+ *
+ * @author eduar
  */
 public class JavaOO_LocadoraDeVeiculosAaEgGit {
-    
-    // Listas para armazenamentos de nosvos cliente pessoa fisica ou juridica.
-    private static List<ClientePessoaFisicaModel> tabelaClientesPessoaFisica;
-    private static List<ClientePessoaJuridicaModel> tabelaClientePessoaJuridica;
-    
-    public static List<ClientePessoaFisicaModel> getTabelaClientesPessoaFisica() {
-        return tabelaClientesPessoaFisica;
-    }
 
-    public static List<ClientePessoaJuridicaModel> getTabelaClientePessoaJuridica() {
-        return tabelaClientePessoaJuridica;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
     }
     
-    public static void iniciarBancoDeDados (){
-        tabelaClientesPessoaFisica = new ArrayList<ClientePessoaFisicaModel>();
-        tabelaClientePessoaJuridica = new ArrayList<ClientePessoaJuridicaModel>();
-    }
 }
