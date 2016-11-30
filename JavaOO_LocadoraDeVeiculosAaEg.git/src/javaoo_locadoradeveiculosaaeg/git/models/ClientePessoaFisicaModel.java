@@ -8,68 +8,60 @@ package javaoo_locadoradeveiculosaaeg.git.models;
 /**
  Classe utilizada para cadastro de clientes pessoa fisica no sistema;
  */
-public class ClientePessoaFisicaModel extends PessoaFisica{
-    private String cep;
-    private String endereco;
-    private String numero;
-    private String complemento;
-    private String bairro;
-    private String cidade;
-    private String estado;
+public class ClientePessoaFisicaModel extends Pessoa{
+    private String cpf;
+    //Dados da CNH
+    private String categoriaCnh;
+    private String tempoCnh;
+    private String estadoEmissorCnh;
+    private String numeroCnh;
+    private String registroCnh;
 
-    public String getCep() {
-        return cep;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getCategoria() {
+        return categoriaCnh;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setCategoria(String categoria) {
+        this.categoriaCnh = categoria;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getTempo() {
+        return tempoCnh;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setTempo(String tempo) {
+        this.tempoCnh = tempo;
     }
 
-    public String getComplemento() {
-        return complemento;
+    public String getEstadoEmissor() {
+        return estadoEmissorCnh;
     }
 
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
+    public void setEstadoEmissor(String estadoEmissor) {
+        this.estadoEmissorCnh = estadoEmissor;
     }
 
-    public String getBairro() {
-        return bairro;
+    public String getNumeroCnh() {
+        return numeroCnh;
     }
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setNumeroCnh(String numeroCnh) {
+        this.numeroCnh = numeroCnh;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getRegistroCnh() {
+        return registroCnh;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setRegistroCnh(String registroCnh) {
+        this.registroCnh = registroCnh;
     }
 }
