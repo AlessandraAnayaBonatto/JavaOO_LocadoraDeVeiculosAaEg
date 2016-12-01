@@ -6,12 +6,13 @@
 package javaoo_locadoradeveiculosaaeg.git.models;
 
 /**
- Classe abistrata utilizada para cadastro de pessoas fisicas no sistema;
+ Classe abistrata utilizada para cadastro de pessoas no sistema;
+ * Classe utilizada para atender a utilização de classes abstratas dentro do trabalho
  */
 public abstract class Pessoa {
     private String nome;
-    private String telefone;
-    private String cep;
+    private int telefone;
+    private int cep;
     private String endereco;
     private String numero;
     private String complemento;
@@ -27,19 +28,19 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public String getTelefone() {
+    public int getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
 
-    public String getCep() {
+    public int getCep() {
         return cep;
     }
 
-    public void setCep(String cep) {
+    public void setCep(int cep) {
         this.cep = cep;
     }
 
@@ -90,4 +91,5 @@ public abstract class Pessoa {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
 }
