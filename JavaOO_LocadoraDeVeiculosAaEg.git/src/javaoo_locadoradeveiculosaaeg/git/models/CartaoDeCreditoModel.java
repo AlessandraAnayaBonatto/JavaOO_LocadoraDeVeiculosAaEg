@@ -6,8 +6,7 @@
 package javaoo_locadoradeveiculosaaeg.git.models;
 
 /**
- *
- * @author eduar
+    Classe utilizada para criação de objetos cartão de credito.
  */
 public class CartaoDeCreditoModel {
     private String numeroCartao;
