@@ -10,6 +10,7 @@ package javaoo_locadoradeveiculosaaeg.git.models;
  */
 public abstract class Pessoa {
     private String nome;
+    private String telefone;
     private String cep;
     private String endereco;
     private String numero;
@@ -24,6 +25,14 @@ public abstract class Pessoa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getCep() {
@@ -81,6 +90,4 @@ public abstract class Pessoa {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
 }
