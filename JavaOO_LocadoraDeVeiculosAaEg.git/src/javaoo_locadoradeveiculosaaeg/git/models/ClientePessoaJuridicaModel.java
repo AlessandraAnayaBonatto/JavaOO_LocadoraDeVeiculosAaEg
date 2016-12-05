@@ -10,6 +10,7 @@ package javaoo_locadoradeveiculosaaeg.git.models;
  */
 public class ClientePessoaJuridicaModel extends Pessoa{
     private String cnpj;
+    
 
     public String getCnpj() {
         return cnpj;

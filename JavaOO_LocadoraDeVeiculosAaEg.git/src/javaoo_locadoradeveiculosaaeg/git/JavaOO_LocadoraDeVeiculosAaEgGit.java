@@ -370,12 +370,53 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit {
     private static ClientePessoaJuridicaModel CadastrarPessoaJuridica() 
     {
         
-        //Falta associar a uma pessoa fisica
-        System.out.println("Informe o nome CNPJ:");
+        System.out.println("Informe o nome:");
+        String nomePessoaJuridica = leitor.nextLine(); 
+        
+        System.out.println("Informe o telefone:");
+        int telefonePessoaJuridica = leitor.nextInt();
+        leitor.nextInt();  
+                
+        System.out.println("Informe o Endereço da empresa:");
+        
+        System.out.println("Informe o nome da rua da empresa:");
+        String enderecoPessoaJuridica = leitor.nextLine();
+        
+        System.out.println("Informe o numero da empresa:");
+        String numeroCasaPessoaJuridica = leitor.nextLine();
+               
+        System.out.println("Informe o Cep da rua da empresa:");
+        int cepPessoaJuridica = leitor.nextInt();
+        leitor.nextInt();
+        
+        System.out.println("Informe algum complemento:");
+        String complementoPessoaJuridica = leitor.nextLine();
+        
+        System.out.println("Informe o bairro da empresa:");
+        String bairroPessoaJuridica = leitor.nextLine();
+        
+        System.out.println("Informe a cidade da empresa:");
+        String cidadePessoaJuridica = leitor.nextLine();
+        
+        System.out.println("Informe o estado da empresa:");
+        String estadoPessoaJuridica = leitor.nextLine();
+        
+        
+        System.out.println("Informe o CNPJ:");
         String cnpjPessoaJuridica = leitor.nextLine();
         
         ClientePessoaJuridicaModel  p = new ClientePessoaJuridicaModel();
         
+        
+        p.setNome(nomePessoaJuridica);
+        p.setTelefone(telefonePessoaJuridica);
+        p.setEndereco(enderecoPessoaJuridica);
+        p.setNumero(numeroCasaPessoaJuridica);
+        p.setCep(cepPessoaJuridica);
+        p.setComplemento(complementoPessoaJuridica);
+        p.setBairro(bairroPessoaJuridica);
+        p.setCidade(cidadePessoaJuridica);
+        p.setEstado(cnpjPessoaJuridica);     
         p.setCnpj(cnpjPessoaJuridica);
         
         
@@ -394,24 +435,47 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit {
         System.out.println("Informe o endereco da loja:");
         String enderecoLoja = leitor.nextLine();
         
-        System.out.println("Informe o horario de atendimento da loja:");
-        String hoarariosLoja = leitor.nextLine();
+        System.out.println("Informe o numero da loja:");
+        String numeroLoja = leitor.nextLine();
+               
+        System.out.println("Informe o Cep da loja:");
+        int cepLoja = leitor.nextInt();
+        leitor.nextInt();
         
-        System.out.println("Informe os locais disponiveis:");
-        String locaisDisponiveisLoja = leitor.nextLine();
+        System.out.println("Informe algum complemento da loja:");
+        String complementoLoja = leitor.nextLine();
         
-        System.out.println("Informe os valores da loja:");
-        float valoresLoja = leitor.nextInt();
-        leitor.nextLine();
+        System.out.println("Informe o bairro da loja:");
+        String bairroLoja = leitor.nextLine();
         
+        System.out.println("Informe a cidade da loja:");
+        String cidadeLoja = leitor.nextLine();
+        
+        System.out.println("Informe o estado da loja:");
+        String estadoLoja = leitor.nextLine();
+        
+        System.out.println("Informe o horario de inicio do atendimento da loja:");
+        String hoararioInicioLoja = leitor.nextLine();
+        
+        System.out.println("Informe o horario de fim do atendimento da loja:");
+        String hoararioFimLoja = leitor.nextLine();       
         LojaModel l = new LojaModel();
+        
+        System.out.println("Informe o CNPJ da loja:");
+        String cnpjLoja = leitor.nextLine();
+        
         
         l.setNome(nomeLoja);
         l.setEndereco(enderecoLoja);
-        l.setHorarios(hoarariosLoja);
-        l.setLocaisDisponiveis(locaisDisponiveisLoja);
-        //Pensar sobre essa variavel , valores são por tipo de servicos 
-        l.setValores(valoresLoja);
+        l.setNumero(numeroLoja);
+        l.setCep(cepLoja);
+        l.setComplemento(complementoLoja);
+        l.setBairro(bairroLoja);
+        l.setCidade(cidadeLoja);
+        l.setEstado(estadoLoja);
+        l.setHorarioInicio(hoararioInicioLoja);
+        l.setHorarioFim(hoararioFimLoja);
+        l.setCnpj(cnpjLoja);
         
         JavaOO_LocadoraDeVeiculosAaEgGit.lojas.add(l);
        

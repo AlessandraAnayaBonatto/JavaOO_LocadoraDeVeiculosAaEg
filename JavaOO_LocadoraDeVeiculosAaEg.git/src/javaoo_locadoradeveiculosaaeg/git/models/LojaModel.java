@@ -9,85 +9,55 @@ package javaoo_locadoradeveiculosaaeg.git.models;
  *
  * @author Philip
  */
-public class LojaModel {
+public class LojaModel extends Pessoa{
     
-    private String nome;
-    private String endereco;
-    private String horarios;
-    private float valores;
-    private String locaisDisponiveis;
+    private String horarioInicio;
+    private String horarioFim;
+    private String cnpj;
 
     /**
-     * @return the nome
+     * @return the horarioInicio
      */
-    public String getNome() {
-        return nome;
+    public String getHorarioInicio() {
+        return horarioInicio;
     }
 
     /**
-     * @param nome the nome to set
+     * @param horarioInicio the horarioInicio to set
      */
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setHorarioInicio(String horarioInicio) {
+        this.horarioInicio = horarioInicio;
     }
 
     /**
-     * @return the endereco
+     * @return the horarioFim
      */
-    public String getEndereco() {
-        return endereco;
+    public String getHorarioFim() {
+        return horarioFim;
     }
 
     /**
-     * @param endereco the endereco to set
+     * @param horarioFim the horarioFim to set
      */
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setHorarioFim(String horarioFim) {
+        this.horarioFim = horarioFim;
     }
 
     /**
-     * @return the horarios
+     * @return the cnpj
      */
-    public String getHorarios() {
-        return horarios;
+    public String getCnpj() {
+        return cnpj;
     }
 
     /**
-     * @param horarios the horarios to set
+     * @param cnpj the cnpj to set
      */
-    public void setHorarios(String horarios) {
-        this.horarios = horarios;
-    }
-
-    /**
-     * @return the valores
-     */
-    public float getValores() {
-        return valores;
-    }
-
-    /**
-     * @param valores the valores to set
-     */
-    public void setValores(float valores) {
-        this.valores = valores;
-    }
-
-    /**
-     * @return the locaisDisponiveis
-     */
-    public String getLocaisDisponiveis() {
-        return locaisDisponiveis;
-    }
-
-    /**
-     * @param locaisDisponiveis the locaisDisponiveis to set
-     */
-    public void setLocaisDisponiveis(String locaisDisponiveis) {
-        this.locaisDisponiveis = locaisDisponiveis;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
     
- 
+
     
     
 }
