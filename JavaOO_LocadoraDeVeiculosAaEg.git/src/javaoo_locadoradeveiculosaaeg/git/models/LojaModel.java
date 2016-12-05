@@ -9,7 +9,7 @@ package javaoo_locadoradeveiculosaaeg.git.models;
  *
  * @author Philip
  */
-public class Loja {
+public class LojaModel {
     
     private String nome;
     private String endereco;

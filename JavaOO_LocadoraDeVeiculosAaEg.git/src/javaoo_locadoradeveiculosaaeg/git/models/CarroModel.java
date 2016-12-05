@@ -10,7 +10,7 @@ package javaoo_locadoradeveiculosaaeg.git.models;
  *
  * @author Philip
  */
-public class Carro {
+public class CarroModel {
     
     private int codigo;
     private String modelo ;

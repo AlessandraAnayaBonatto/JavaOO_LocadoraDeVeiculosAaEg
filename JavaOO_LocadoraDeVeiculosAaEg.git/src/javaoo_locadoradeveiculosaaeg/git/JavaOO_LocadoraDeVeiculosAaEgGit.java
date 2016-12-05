@@ -8,11 +8,11 @@ package javaoo_locadoradeveiculosaaeg.git;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import javaoo_locadoradeveiculosaaeg.git.models.Carro;
+import javaoo_locadoradeveiculosaaeg.git.models.CarroModel;
 import javaoo_locadoradeveiculosaaeg.git.models.CartaoDeCreditoModel;
 import javaoo_locadoradeveiculosaaeg.git.models.ClientePessoaFisicaModel;
 import javaoo_locadoradeveiculosaaeg.git.models.ClientePessoaJuridicaModel;
-import javaoo_locadoradeveiculosaaeg.git.models.Loja;
+import javaoo_locadoradeveiculosaaeg.git.models.LojaModel;
 
 /**
  *
@@ -22,13 +22,13 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit {
     
     private static Scanner leitor = new Scanner(System.in);
 
-    private static List<Carro> carros;
+    private static List<CarroModel> carros;
     
     private static List<ClientePessoaFisicaModel> pessoasFisicas;
     
     private static List<ClientePessoaJuridicaModel> pessoasJuridicas;
     
-    private static List<Loja> lojas;
+    private static List<LojaModel> lojas;
     
     private static List<CartaoDeCreditoModel> cartoes;
     
@@ -39,10 +39,10 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit {
     {
         
         
-    carros = new ArrayList<Carro>();    
+    carros = new ArrayList<CarroModel>();    
     pessoasFisicas = new ArrayList<ClientePessoaFisicaModel>();    
     pessoasJuridicas = new ArrayList<ClientePessoaJuridicaModel>();
-    lojas = new ArrayList<Loja>();
+    lojas = new ArrayList<LojaModel>();
     cartoes = new ArrayList<CartaoDeCreditoModel>();
     
         
@@ -167,7 +167,7 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit {
 
   
 
-    private static Carro CadastrarCarro() 
+    private static CarroModel CadastrarCarro() 
     {
         
         System.out.println("Informe o código do carro:");
@@ -254,7 +254,7 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit {
         leitor.nextLine();
     
         
-        Carro c = new Carro();
+        CarroModel c = new CarroModel();
         
         c.setCodigo(codCarro);
         c.setModelo(modeloCarro);
@@ -385,7 +385,7 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit {
         
      }
 
-    private static Loja CadastrarLoja() 
+    private static LojaModel CadastrarLoja() 
     {
          
         System.out.println("Informe o nome da loja:");
@@ -404,7 +404,7 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit {
         float valoresLoja = leitor.nextInt();
         leitor.nextLine();
         
-        Loja l = new Loja();
+        LojaModel l = new LojaModel();
         
         l.setNome(nomeLoja);
         l.setEndereco(enderecoLoja);
