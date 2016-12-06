@@ -139,4 +139,186 @@ public class CarroController {
     }
 
     
+    private static CarroModel PesquisarCarroPorCodigo(int codCarro)
+    {
+        
+        for(CarroModel c : BancoDeDadosLocadora.getTabelaCarro())
+        {
+            if(c.getCodigo() == codCarro)
+            {
+                return c;
+            }      
+        }             
+        return null;
+    }
+    
+    
+    
+    private static void AlterarCarro() 
+    {
+       System.out.println("Digite o código do carro que você deseja alterar:");
+       int codCarro = leitor.nextInt();
+       leitor.nextLine(); 
+       
+        CarroModel c = PesquisarCarroPorCodigo(codCarro);
+        
+       
+        if (c != null)
+        {
+            System.out.println("Digite o novo Código para o carro, (Anterior: " + c.getCodigo() + "): ");
+            int novoCodigo = leitor.nextInt();
+            leitor.nextLine(); 
+            
+                c.setCodigo(novoCodigo);
+            
+            System.out.println("Informe o novo modelo para carro, (Anterior: " + c.getModelo() + "): ");
+            String novoModeloCarro = leitor.nextLine();  
+            
+                c.setModelo(novoModeloCarro);
+            
+            
+            System.out.println("Informe o nova marca para carro, (Anterior: " + c.getMarca() + "): ");
+            String novaMarcaCarro = leitor.nextLine(); 
+            
+                c.setMarca(novoModeloCarro);
+        
+            System.out.println("Informe o novo ano para o carro, (Anterior: " + c.getAno() + "): ");
+            int novoAnoCarro = leitor.nextInt(); 
+            leitor.nextLine();
+            
+                c.setAno(novoAnoCarro);
+            
+            
+            System.out.println("Informe o nova categoria para o carro, (Anterior: " + c.getCategoria () + "): ");
+            String novaCategoriaCarro = leitor.nextLine(); 
+            
+                c.setCategoria(novaCategoriaCarro);
+
+            System.out.println("Informe a nova quantidade de portas para o carro, (Anterior: " + c.getQuantPortas () + "): ");
+            int novaQuantPortasCarro = leitor.nextInt(); 
+            leitor.nextLine();
+            
+                c.setQuantPortas(novaQuantPortasCarro);
+
+            System.out.println("Informe a quantidade de pessoas do carro, (Anterior: " + c.getQuantPessoas () + "): ");
+            int novaQuantPessoasCarro = leitor.nextInt(); 
+            leitor.nextLine();
+            
+                c.setQuantPessoas(novaQuantPessoasCarro);
+            
+
+            System.out.println("Informe a quantidade de malas do carro, (Anterior: " + c.getQuantMalas () + "): ");
+            int novaQuantMalasCarro = leitor.nextInt(); 
+            leitor.nextLine();
+            
+                c.setQuantMalas(novaQuantMalasCarro);            
+
+            System.out.println("Informe se tem ar no carro (sendo S para sim e N para não), (Anterior: " + c.isAr () + "): ");
+            boolean novoArCarro = leitor.nextBoolean();             
+            
+                c.setAr(novoArCarro);
+            
+            System.out.println("Informe se tem ou não direção hidraulica: (sendo S para sim e N para não), (Anterior: " + c.isDirecaoHidraulica () + "):");
+            boolean novaDirecaoCarro = leitor.nextBoolean();            
+            
+                c.setDirecaoHidraulica(novaDirecaoCarro);          
+            
+            System.out.println("Informe se tem ou não Vidro eletrico: (sendo S para sim e N para não), (Anterior: " + c.isVidroEletrico () + "):");
+            boolean novoVidroCarro = leitor.nextBoolean();
+            
+                c.setVidroEletrico(novoVidroCarro);                   
+            
+            
+            System.out.println("Informe se tem ou não Trava eletrica: (sendo S para sim e N para não), (Anterior: " + c.isTravaEletrica () + "):");
+            boolean novoTravaCarro = leitor.nextBoolean();
+            
+            
+                c.setTravaEletrica(novoTravaCarro);
+            
+
+            System.out.println("Informe se tem ou não Airbag: (sendo S para sim e N para não),(Anterior: " + c.isAirBag () + "):");
+            boolean novoAirbagCarro = leitor.nextBoolean();
+            
+            
+                c.setAirBag(novoAirbagCarro);
+              
+                        
+            System.out.println("Informe se tem ou não freios abs: (sendo S para sim e N para não), (Anterior: " + c.isAbs () + "):");
+            boolean novoAbsCarro = leitor.nextBoolean();
+            
+            
+                c.setAbs(novoAbsCarro);
+                
+                
+            System.out.println("Informe se tem ou não blindagem: (sendo S para sim e N para não), (Anterior: " + c.isBlindagem() + "):");
+            boolean novaBlindagemCarro = leitor.nextBoolean();
+
+                c.setBlindagem(novaBlindagemCarro);
+            
+            System.out.println("Informe se tem ou não couro: (sendo S para sim e N para não) ,(Anterior: " + c.isCouro() +  "):");
+            boolean novoCouroCarro = leitor.nextBoolean();
+            
+            
+                c.setCouro(novoCouroCarro);
+
+            System.out.println("Informe se tem ou não limpeza: (sendo S para sim e N para não), (Anterior: " + c.isLimpeza() + "):");
+            boolean novaLimpezaCarro = leitor.nextBoolean();
+            
+                c.setLimpeza(novaLimpezaCarro);
+
+               
+            System.out.println("Informe a potência do motor: , (Anterior: " + c.getPotenciaMotor() + "):");
+            String novaPotenciaMotorCarro = leitor.nextLine(); 
+            
+                c.setPotenciaMotor(novaPotenciaMotorCarro);
+
+            System.out.println("Informe o tipo de combustivel: ,(Anterior: " + c.getTipoCombustivel() + "):");
+            String novoCombustivelCarro = leitor.nextLine(); 
+            
+                c.setTipoCombustivel(novoCombustivelCarro);
+
+            System.out.println("Informe o tipo de cambio: , (Anterior: " + c.getTipoCambio() + "):");
+            String novoCambioCarro = leitor.nextLine(); 
+            
+                c.setTipoCambio(novoCambioCarro);
+
+            System.out.println("Informe qual nivel está o tanque: ,(Anterior: " + c.getNivelTanque() + "):");
+            String novoTanqueCarro = leitor.nextLine(); 
+            
+                c.setNivelTanque(novoTanqueCarro);
+
+            System.out.println("Informe o tipo de locação: , (Anterior: " + c.getTipoLocacao() + "):");
+            String novoTipoLocacaoCarro = leitor.nextLine(); 
+            
+                c.setTipoLocacao(novoTipoLocacaoCarro);
+
+            System.out.println("Informe a quilometragem: , (Anterior: " + c.getQuilometragem() + "):");
+            int novaQuilometragemCarro = leitor.nextInt(); 
+            leitor.nextLine(); 
+            
+                c.setQuilometragem(novaQuilometragemCarro);
+
+            System.out.println("Informe o valor: , (Anterior: " + c.getValores() + "):");
+            float novoValorCarro = leitor.nextFloat(); 
+            leitor.nextLine();
+            
+                c.setValores(novoValorCarro);
+
+            System.out.println("Informe as taxas: , (Anterior: " + c.getTaxas() + "):");
+            float novaTaxasCarro = leitor.nextFloat(); 
+            leitor.nextLine();
+            
+                c.setTaxas(novaTaxasCarro);          
+            
+            
+            System.out.println("Carro alterado com Sucesso!");
+            
+        }else
+        {
+            System.out.println("Carro não cadastrado!");
+        }       
+                
+    }
+    
+    
 }
