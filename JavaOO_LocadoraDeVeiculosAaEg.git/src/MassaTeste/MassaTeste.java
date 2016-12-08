@@ -9,6 +9,7 @@ import javaoo_locadoradeveiculosaaeg.git.bancoDeDados.BancoDeDadosLocadora;
 import javaoo_locadoradeveiculosaaeg.git.models.CarroModel;
 import javaoo_locadoradeveiculosaaeg.git.models.CartaoDeCreditoModel;
 import javaoo_locadoradeveiculosaaeg.git.models.ClientePessoaFisicaModel;
+import javaoo_locadoradeveiculosaaeg.git.models.ClientePessoaJuridicaModel;
 import javaoo_locadoradeveiculosaaeg.git.models.LojaModel;
 
 
@@ -18,6 +19,7 @@ import javaoo_locadoradeveiculosaaeg.git.models.LojaModel;
  */
 public class MassaTeste {
     public static void GerarMassaTeste(){
+        //Laço para geração de massa teste de carro
         for (int i = 1; i <= 10; i++) {
             CarroModel cr = new CarroModel();
             cr.setCodigo(i);
@@ -67,7 +69,8 @@ public class MassaTeste {
             
             BancoDeDadosLocadora.getTabelaCarro().add(cr);
         }
-        
+
+        //Laço para geração de massa teste de cartão de credito        
         for (int i = 1; i <= 10; i++) {
             CartaoDeCreditoModel cc = new CartaoDeCreditoModel();
             cc.setNumeroCartao("0000 0000 0000 000"+i);
@@ -78,12 +81,13 @@ public class MassaTeste {
             
             BancoDeDadosLocadora.getTabelaCartaoDeCredito().add(cc);
         }
-        
+
+        //Laço para geração de massa teste de loja        
         for (int i = 1; i <= 4; i++) {
             LojaModel lj = new LojaModel();
             lj.setNome("LojaTeste"+i);
             lj.setEndereco("EndereçoTeste"+i);
-            //lj.setNumero("Numero"+i);
+            lj.setNumero(i);
             lj.setCep(83409000+i);
             lj.setComplemento("Complemento"+i);
             lj.setBairro("Bairro"+i);
@@ -96,14 +100,15 @@ public class MassaTeste {
             
             BancoDeDadosLocadora.getTabelaLoja().add(lj);
         }
-        
-        for (int i = 1; i <= 4; i++) {
+
+        //Laço para geração de massa teste de cliente pf        
+        for (int i = 1; i <= 10; i++) {
             ClientePessoaFisicaModel pf = new ClientePessoaFisicaModel();
             pf.setNome("PessoaFisicaTeste"+i);
             pf.setTelefone(33330000+i);
             pf.setCpf("CPF"+i);
             pf.setEndereco("EndereçoPF"+i);
-           // pf.setNumero("NumeroPF"+i);
+            pf.setNumero(i);
             pf.setCep(83409000+i);
             pf.setComplemento("ComplementoPF"+i);
             pf.setBairro("BairroPF"+i);
@@ -116,6 +121,23 @@ public class MassaTeste {
             pf.setRegistroCnh("RegistroCnhPF"+i);
             
             BancoDeDadosLocadora.getTabelaClientesPessoaFisica().add(pf);
+        }
+
+        //Laço para geração de massa teste de cliente pj                
+        for (int i = 1; i <= 5; i++) {
+            ClientePessoaJuridicaModel pj = new ClientePessoaJuridicaModel();
+            pj.setNome("PessoaJuridicaTeste"+i);
+            pj.setTelefone(33330000+i);
+            pj.setEndereco("EndereçoPF"+i);
+            pj.setNumero(i);
+            pj.setCep(83409000+i);
+            pj.setComplemento("ComplementoPF"+i);
+            pj.setBairro("BairroPF"+i);
+            pj.setCidade("CidadePF"+i);
+            pj.setEstado("EstadoPF"+i);
+            pj.setCnpj("CNPJ"+i);
+            
+            BancoDeDadosLocadora.getTabelaClientePessoaJuridica().add(pj);
         }
     }
 }
