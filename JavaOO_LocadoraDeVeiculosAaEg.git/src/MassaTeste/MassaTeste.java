@@ -83,7 +83,7 @@ public class MassaTeste {
             LojaModel lj = new LojaModel();
             lj.setNome("LojaTeste"+i);
             lj.setEndereco("EndereçoTeste"+i);
-            lj.setNumero("Numero"+i);
+            //lj.setNumero("Numero"+i);
             lj.setCep(83409000+i);
             lj.setComplemento("Complemento"+i);
             lj.setBairro("Bairro"+i);
@@ -103,7 +103,7 @@ public class MassaTeste {
             pf.setTelefone(33330000+i);
             pf.setCpf("CPF"+i);
             pf.setEndereco("EndereçoPF"+i);
-            pf.setNumero("NumeroPF"+i);
+           // pf.setNumero("NumeroPF"+i);
             pf.setCep(83409000+i);
             pf.setComplemento("ComplementoPF"+i);
             pf.setBairro("BairroPF"+i);
