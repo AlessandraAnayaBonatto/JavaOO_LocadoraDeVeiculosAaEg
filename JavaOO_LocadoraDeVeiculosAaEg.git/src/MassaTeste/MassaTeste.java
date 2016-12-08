@@ -8,6 +8,9 @@ package MassaTeste;
 import javaoo_locadoradeveiculosaaeg.git.bancoDeDados.BancoDeDadosLocadora;
 import javaoo_locadoradeveiculosaaeg.git.models.CarroModel;
 import javaoo_locadoradeveiculosaaeg.git.models.CartaoDeCreditoModel;
+import javaoo_locadoradeveiculosaaeg.git.models.ClientePessoaFisicaModel;
+import javaoo_locadoradeveiculosaaeg.git.models.LojaModel;
+
 
 /**
  *
@@ -15,7 +18,7 @@ import javaoo_locadoradeveiculosaaeg.git.models.CartaoDeCreditoModel;
  */
 public class MassaTeste {
     public static void GerarMassaTeste(){
-        for (int i = 1; i <= 30; i++) {
+        for (int i = 1; i <= 10; i++) {
             CarroModel cr = new CarroModel();
             cr.setCodigo(i);
             cr.setModelo("ModeloTeste" + i);
@@ -61,12 +64,58 @@ public class MassaTeste {
                 cr.setCouro(false);
                 cr.setLimpeza(false);
             }
+            
             BancoDeDadosLocadora.getTabelaCarro().add(cr);
         }
         
         for (int i = 1; i <= 10; i++) {
             CartaoDeCreditoModel cc = new CartaoDeCreditoModel();
+            cc.setNumeroCartao("0000 0000 0000 000"+i);
+            cc.setNomeDoTitular("TesteCatão"+i);
+            cc.setCodigoSegurança(100+i);
+            cc.setMesValidade(i);
+            cc.setAnoValidade(20+i);
             
+            BancoDeDadosLocadora.getTabelaCartaoDeCredito().add(cc);
+        }
+        
+        for (int i = 1; i <= 4; i++) {
+            LojaModel lj = new LojaModel();
+            lj.setNome("LojaTeste"+i);
+            lj.setEndereco("EndereçoTeste"+i);
+            lj.setNumero("Numero"+i);
+            lj.setCep(83409000+i);
+            lj.setComplemento("Complemento"+i);
+            lj.setBairro("Bairro"+i);
+            lj.setCidade("Cidade"+i);
+            lj.setEstado("Estado"+i);
+            lj.setHorarioInicio("Incias as 08:00");
+            lj.setHorarioFim("Finaliza as 18:00");
+            lj.setCnpj("CNPJ"+i);
+            lj.setTelefone(33330000+i);
+            
+            BancoDeDadosLocadora.getTabelaLoja().add(lj);
+        }
+        
+        for (int i = 1; i <= 4; i++) {
+            ClientePessoaFisicaModel pf = new ClientePessoaFisicaModel();
+            pf.setNome("PessoaFisicaTeste"+i);
+            pf.setTelefone(33330000+i);
+            pf.setCpf("CPF"+i);
+            pf.setEndereco("EndereçoPF"+i);
+            pf.setNumero("NumeroPF"+i);
+            pf.setCep(83409000+i);
+            pf.setComplemento("ComplementoPF"+i);
+            pf.setBairro("BairroPF"+i);
+            pf.setCidade("CidadePF"+i);
+            pf.setEstado("EstadoPF"+i);
+            pf.setCategoria("CategoriaCnhPF"+i);
+            pf.setTempo("TempoCnhPF"+i);
+            pf.setEstadoEmissor("EstadoEmissorcnhPF"+i);
+            pf.setNumeroCnh("NumeroCnhPF"+i);
+            pf.setRegistroCnh("RegistroCnhPF"+i);
+            
+            BancoDeDadosLocadora.getTabelaClientesPessoaFisica().add(pf);
         }
     }
 }
