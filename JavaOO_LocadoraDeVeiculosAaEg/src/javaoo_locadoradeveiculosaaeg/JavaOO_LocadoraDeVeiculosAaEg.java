@@ -5,15 +5,7 @@
  */
 package javaoo_locadoradeveiculosaaeg;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 import bancoDeDados.BancoDeDadosLocadora;
-import models.CarroModel;
-import models.CartaoDeCreditoModel;
-import models.ClientePessoaFisicaModel;
-import models.ClientePessoaJuridicaModel;
-import models.LojaModel;
 import view.MenuView;
 
 public class JavaOO_LocadoraDeVeiculosAaEg 

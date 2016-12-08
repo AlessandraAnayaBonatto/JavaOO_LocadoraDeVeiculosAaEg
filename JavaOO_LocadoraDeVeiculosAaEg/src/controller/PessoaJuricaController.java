@@ -5,7 +5,6 @@
  */
 package controller;
 
-import static controller.PessoaFisicaController.PesquisarPessoaPorCpf;
 import java.util.Scanner;
 import bancoDeDados.BancoDeDadosLocadora;
 import models.ClientePessoaJuridicaModel;

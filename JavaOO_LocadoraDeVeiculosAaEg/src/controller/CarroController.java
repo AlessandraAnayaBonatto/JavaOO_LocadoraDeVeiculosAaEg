@@ -6,7 +6,6 @@
 package controller;
 
 import java.util.Scanner;
-import javaoo_locadoradeveiculosaaeg.JavaOO_LocadoraDeVeiculosAaEg;
 import bancoDeDados.BancoDeDadosLocadora;
 import models.CarroModel;
 
