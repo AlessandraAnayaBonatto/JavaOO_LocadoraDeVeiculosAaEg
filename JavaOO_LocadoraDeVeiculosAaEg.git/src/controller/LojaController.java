@@ -28,7 +28,7 @@ public class LojaController {
         String enderecoLoja = leitor.nextLine();
         
         System.out.println("Informe o numero da loja:");
-        String numeroLoja = leitor.nextLine();
+        int numeroLoja = leitor.nextInt();
                
         System.out.println("Informe o Cep da loja:");
         int cepLoja = leitor.nextInt();
@@ -74,4 +74,114 @@ public class LojaController {
        
     }
     
-}
+    public static void AlterarLoja() 
+    {
+       System.out.println("Digite o nome da loja você deseja alterar:");
+       String nomeLoja = leitor.nextLine();
+      
+        LojaModel l = new LojaModel ();
+        
+       
+        if (l != null)
+        {
+            System.out.println("Digite o novo Código para o carro, (Anterior: " + l.getNome()+ "): ");
+            String novoNome = leitor.nextLine();
+                        
+                l.setNome(novoNome);
+            
+            System.out.println("Informe o novo telefone para loja, (Anterior: " + l.getTelefone() + "): ");
+            int novoTelefone = leitor.nextInt();  
+            leitor.nextLine();
+            
+                l.setTelefone(novoTelefone);
+                
+            System.out.println("Informe dados do novo endereço!");
+            
+            
+            System.out.println("Digite o novo endereço para loja, (Anterior: " + l.getEndereco()+ "): ");
+            String novoEndereco = leitor.nextLine();
+            
+                l.setEndereco(novoEndereco);            
+                
+            System.out.println("Digite o novo número para loja, (Anterior: " + l.getNumero() + "): ");
+            int novoNumero = leitor.nextInt();
+            leitor.nextLine();
+            
+                l.setNumero(novoNumero);
+            
+            System.out.println("Digite o novo complemento para loja, (Anterior: " + l.getComplemento() + "): ");
+            String novoComplemento = leitor.nextLine();
+            
+                l.setComplemento(novoComplemento);
+                
+            System.out.println("Digite o novo CEP para loja, (Anterior: " + l.getCep() + "): ");
+            int novoCep = leitor.nextInt();
+            leitor.nextLine();
+            
+                l.setCep(novoCep);
+                
+            System.out.println("Digite o novo Estado para loja, (Anterior: " + l.getEstado() + "): ");
+            String novoEstado = leitor.nextLine();
+            
+                l.setEstado(novoEstado);
+                
+            System.out.println("Digite a nova cidade para a loja, (Anterior: " + l.getCidade() + "): ");
+            String novoCidade = leitor.nextLine();
+            
+                l.setCidade(novoCidade);
+                
+            System.out.println("Digite o novo bairro para a loja, (Anterior: " + l.getBairro() + "): ");
+            String novoBairro = leitor.nextLine();
+            
+                l.setBairro(novoBairro);
+                
+            System.out.println("Digite o novo CNPJ da loja, (Anterior: " + l.getCnpj() + "): ");
+            String novoCnpj = leitor.nextLine();
+            
+                l.setCnpj(novoCnpj);
+                
+            System.out.println("Digite o novo horario inicio, (Anterior: " + l.getHorarioInicio() + "): ");
+            String novoHorarioInicio = leitor.nextLine();
+            
+                l.setHorarioInicio(novoHorarioInicio);
+            
+            System.out.println("Digite o novo horario fim, (Anterior: " + l.getHorarioFim() + "): ");
+            String novoHorarioFim = leitor.nextLine();
+            
+                l.setHorarioFim(novoHorarioFim);
+                
+                        
+            System.out.println("Loja alterada com Sucesso!");
+            
+            
+        }else
+        {
+            System.out.println("Loja não cadastrada!");
+        }     
+        
+    }
+        
+        public static void ExcluirLoja() 
+        {
+            
+            System.out.println("Digite o nome da loja que deseja excluir:");
+            String nomeLoja = leitor.nextLine();
+            
+
+            if (nomeLoja != null)
+            {
+                BancoDeDadosLocadora.getTabelaLoja().remove(nomeLoja);
+                System.out.println("Loja excluida com Sucesso!");
+
+            }else
+            {
+                System.out.println("Loja não cadastrada no sistema!!!");
+            }     
+
+        }
+        
+                
+    }
+    
+    
+

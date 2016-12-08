@@ -84,49 +84,49 @@ public class MenuView {
                     CartaoDeCreditoController.CadastrarCartadeCredito();
                     break;
                 case 6 :
-                   // AlterarCarro();
+                    CarroController.AlterarCarro();
                     break;
                 case 7 :
-                    //AlterarPessoaFisica();
+                    PessoaFisicaController.AlterarPessoaFisica();
                     break;
                 case 8:
-                    //AlterarPessoaJuridica();
+                    PessoaJuricaController.AlterarPessoaJuridica();
                     break;
                 case 9:
-                    //AlterarLoja();
+                    LojaController.AlterarLoja();
                     break;
                 case 10:
-                    //AlterarCartaoCredito();
+                    CartaoDeCreditoController.AlterarCartaoCredito();
                     break;
                 case 11:
-                    //ExluirCarro();
+                    CarroController.ExcluirCarro();
                     break;
                 case 12:
-                    //ExcluirPessoaFisica();
+                    PessoaFisicaController.ExcluirPessoaFisica();
                     break;
                 case 13:
-                    // ExcluirPessoaJuridica();
+                    PessoaJuricaController.ExcluirPessoaJuridica();
                     break;
                 case 14:
-                    //ExcluirLoja();
+                    LojaController.ExcluirLoja();
                     break;
                 case 15:
-                    //EcluirCartaoCredito();
+                    CartaoDeCreditoController.ExcluirCartao();
                     break;
                 case 16:
-                    //VisualizarListaCarros();
+                    CarroView.ExibirCarros();
                     break;
                 case 17:
-                    //VisualizarListaPessoaFisica();
+                    PessoaFisicaView.ExibirPessoaFisica();
                     break;
                 case 18:
-                    //VisualizarListaPessoaJuridica();
+                    PessoaJuridicaView.ExibirPessoaJuridica();
                     break;
                 case 19:
-                    //VisualizarListaLojas();
+                    LojaView.ExibirLojasCadastradas();
                     break;
                 case 20:
-                    //VisualizarListaCartaoCredito();
+                    CartaoDeCreditoView.ExibirCartoesCadastrados();
                     break;
                 case 21:
                     break;

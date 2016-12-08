@@ -8,7 +8,9 @@ package controller;
 import java.util.Scanner;
 import javaoo_locadoradeveiculosaaeg.git.JavaOO_LocadoraDeVeiculosAaEgGit;
 import javaoo_locadoradeveiculosaaeg.git.bancoDeDados.BancoDeDadosLocadora;
+import javaoo_locadoradeveiculosaaeg.git.models.CarroModel;
 import javaoo_locadoradeveiculosaaeg.git.models.ClientePessoaFisicaModel;
+import javaoo_locadoradeveiculosaaeg.git.models.LojaModel;
 
 /**
  *
@@ -36,7 +38,7 @@ public class PessoaFisicaController {
         String enderecoPessoaFisica = leitor.nextLine();
         
         System.out.println("Informe o numero da casa:");
-        String numeroCasaPessoaFisica = leitor.nextLine();
+        int numeroCasaPessoaFisica = leitor.nextInt();
                
         System.out.println("Informe o Cep da rua:");
         int cepPessoaFisica = leitor.nextInt();
@@ -93,5 +95,146 @@ public class PessoaFisicaController {
         
         
     }
+    
+    public static ClientePessoaFisicaModel PesquisarPessoaPorCpf (String codCpf) 
+    {
+        
+        for(ClientePessoaFisicaModel p : BancoDeDadosLocadora.getTabelaClientesPessoaFisica())
+        {
+            if(p.getCpf() == codCpf)
+            {
+                return p;
+            }      
+        }             
+        return null;
+ 
+    }
+    
+    public static void AlterarPessoaFisica() 
+    {
+        System.out.println("Digite o CPF que deseja alterar:");
+        String codCpf = leitor.nextLine();
+        
+       
+        ClientePessoaFisicaModel c = PesquisarPessoaPorCpf(codCpf);
+        
+        
+        if (c != null)
+        {
+            System.out.println("Digite o novo Nome, (Anterior: " + c.getNome() + "): ");
+            String novoNome = leitor.nextLine();
+            
+                c.setNome(novoNome);
+            
+            System.out.println("Informe o novo telefone, (Anterior: " + c.getTelefone() + "): ");
+            int novoTelefone = leitor.nextInt();  
+            leitor.nextLine();
+            
+                c.setTelefone(novoTelefone);
+                
+            System.out.println("Informe dados do novo endereço!");
+            
+            
+            System.out.println("Digite o novo endereço, (Anterior: " + c.getEndereco()+ "): ");
+            String novoEndereco = leitor.nextLine();
+            
+                c.setEndereco(novoEndereco);
+                
+            System.out.println("Digite o novo número, (Anterior: " + c.getNumero() + "): ");
+            int novoNumero = leitor.nextInt();
+            leitor.nextLine();
+            
+                c.setNumero(novoNumero);
+            
+            System.out.println("Digite o novo complemento, (Anterior: " + c.getComplemento() + "): ");
+            String novoComplemento = leitor.nextLine();
+            
+                c.setComplemento(novoComplemento);
+                
+            System.out.println("Digite o novo CEP, (Anterior: " + c.getCep() + "): ");
+            int novoCep = leitor.nextInt();
+            leitor.nextLine();
+            
+                c.setCep(novoCep);
+                
+            System.out.println("Digite o novo Estado, (Anterior: " + c.getEstado() + "): ");
+            String novoEstado = leitor.nextLine();
+            
+                c.setEstado(novoEstado);
+                
+            System.out.println("Digite a nova cidade, (Anterior: " + c.getCidade() + "): ");
+            String novoCidade = leitor.nextLine();
+            
+                c.setCidade(novoCidade);
+                
+            System.out.println("Digite o novo bairro, (Anterior: " + c.getBairro() + "): ");
+            String novoBairro = leitor.nextLine();
+            
+                c.setBairro(novoBairro);
+                
+            System.out.println("Digite o novo CPF, (Anterior: " + c.getCpf() + "): ");
+            String novoCpfPessoaFisica = leitor.nextLine();     
+                            
+                c.setCpf(novoCpfPessoaFisica);
+                
+            System.out.println("Informe novos dados da CNH:");
+      
+            System.out.println("Digite a nova categoria, (Anterior: " + c.getCategoria() + "): ");
+            String novaCategoriaCnhPessoaFisica = leitor.nextLine();
+            
+                c.setCategoria(novaCategoriaCnhPessoaFisica);
+
+            System.out.println("Digite o novo tempo da CNH, (Anterior: " + c.getTempo() + "): ");
+            String novoTempoCnhPessoaFisica = leitor.nextLine();
+            
+                c.setTempo(novoTempoCnhPessoaFisica);
+
+            System.out.println("Digite o novo estado emissor da CNH, (Anterior: " + c.getEstadoEmissor() + "): ");
+            String novoEstadoEmissorCnhPessoaFisica = leitor.nextLine();
+            
+                c.setEstadoEmissor(novoEstadoEmissorCnhPessoaFisica);
+
+            System.out.println("Digite o novo numero da CNH, (Anterior: " + c.getNumeroCnh() + "): ");
+            String novoNumeroCnhPessoaFisica = leitor.nextLine();
+            
+                c.setNumeroCnh(novoNumeroCnhPessoaFisica);
+
+            System.out.println("Digite o novo registro da CNH, (Anterior: " + c.getRegistroCnh() + "): ");
+            String novoRegistroCnhPessoaFisica = leitor.nextLine();
+            
+                c.setRegistroCnh(novoRegistroCnhPessoaFisica);
+            
+            
+            System.out.println("Pessoa Física alterada com Sucesso!");
+            
+        }else
+        {
+            System.out.println("CPF  não cadastrado!");
+        }       
+    } 
+
+
+    public static void ExcluirPessoaFisica() 
+    {
+        System.out.println("Digite o CPF da pessoa que deseja excluir:");
+        String codCpf = leitor.nextLine();
+        leitor.nextLine();
+        
+        ClientePessoaFisicaModel c = PesquisarPessoaPorCpf (codCpf);
+        
+        
+        if (c != null)
+        {
+            BancoDeDadosLocadora.getTabelaClientesPessoaFisica().remove(c);
+            
+            System.out.println("Pessoa física excluida com Sucesso!");
+            
+        }else
+        {
+            System.out.println("Pessoa física não cadastrada no sistema!!!");
+        }     
+        
+    }
+              
     
 }

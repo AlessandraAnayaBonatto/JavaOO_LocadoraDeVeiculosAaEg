@@ -154,7 +154,7 @@ public class CarroController {
     
     
     
-    private static void AlterarCarro() 
+    public static void AlterarCarro() 
     {
        System.out.println("Digite o código do carro que você deseja alterar:");
        int codCarro = leitor.nextInt();
@@ -320,5 +320,26 @@ public class CarroController {
                 
     }
     
+    
+    public static void ExcluirCarro() 
+    {
+        System.out.println("Digite o Código do carro que deseja excluir:");
+        int codCarro = leitor.nextInt();
+        leitor.nextLine();
+        
+        CarroModel c = PesquisarCarroPorCodigo (codCarro);
+        
+        
+        if (c != null)
+        {
+            BancoDeDadosLocadora.getTabelaCarro().remove(c);
+            System.out.println("Carro excluido com Sucesso!");
+            
+        }else
+        {
+            System.out.println("Carro  não cadastrado no sistema!!!");
+        }     
+        
+    }
     
 }

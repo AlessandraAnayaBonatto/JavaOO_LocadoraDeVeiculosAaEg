@@ -14,7 +14,7 @@ public abstract class Pessoa {
     private int telefone;
     private int cep;
     private String endereco;
-    private String numero;
+    private int  numero;
     private String complemento;
     private String bairro;
     private String cidade;
@@ -52,11 +52,11 @@ public abstract class Pessoa {
         this.endereco = endereco;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
