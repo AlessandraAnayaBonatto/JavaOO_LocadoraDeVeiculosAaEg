@@ -68,70 +68,78 @@ public class MenuView {
         {
             switch (opcao)
             {
+                //Opções referentes a carro
                 case 1:
                     CarroController.CadastrarCarro();
                     break;   
                 case 2:
-                    PessoaFisicaController.CadastrarPessoaFisica();
-                    break;
-                case 3:
-                    PessoaJuricaController.CadastrarPessoaJuridica();
-                    break;
-                case 4:
-                    LojaController.CadastrarLoja();
-                    break;
-                case 5:
-                    CartaoDeCreditoController.CadastrarCartadeCredito();
-                    break;
-                case 6 :
-                    CarroController.AlterarCarro();
-                    break;
-                case 7 :
-                    PessoaFisicaController.AlterarPessoaFisica();
-                    break;
-                case 8:
-                    PessoaJuricaController.AlterarPessoaJuridica();
-                    break;
-                case 9:
-                    LojaController.AlterarLoja();
-                    break;
-                case 10:
-                    CartaoDeCreditoController.AlterarCartaoCredito();
-                    break;
-                case 11:
-                    CarroController.ExcluirCarro();
-                    break;
-                case 12:
-                    PessoaFisicaController.ExcluirPessoaFisica();
-                    break;
-                case 13:
-                    PessoaJuricaController.ExcluirPessoaJuridica();
-                    break;
-                case 14:
-                    LojaController.ExcluirLoja();
-                    break;
-                case 15:
-                    CartaoDeCreditoController.ExcluirCartao();
-                    break;
-                case 16:
                     CarroView.ExibirCarros();
                     break;
-                case 17:
-                    PessoaFisicaView.ExibirPessoaFisica();
+                case 3 :
+                    CarroController.AlterarCarro();
                     break;
-                case 18:
+                case 4:
+                    CarroController.ExcluirCarro();
+                    break;
+                
+                //Opções referentes a Cliente PF
+                case 5:
+                    PessoaFisicaController.CadastrarPessoaFisica();
+                    break;
+                case 6:
+                    PessoaFisicaView.ExibirPessoaFisica();
+                    break;    
+                case 7 :
+                    PessoaFisicaController.AlterarPessoaFisica();
+                    break;    
+                case 8:
+                    PessoaFisicaController.ExcluirPessoaFisica();
+                    break;
+                    
+                //Opções referentes a Cliente PJ    
+                case 9:
+                    PessoaJuricaController.CadastrarPessoaJuridica();
+                    break;
+                case 10:
                     PessoaJuridicaView.ExibirPessoaJuridica();
+                    break;    
+                case 11:
+                    PessoaJuricaController.AlterarPessoaJuridica();
+                    break;    
+                case 12:
+                    PessoaJuricaController.ExcluirPessoaJuridica();
+                    break;    
+                
+                //Opções referentes a loja 
+                case 13:
+                    LojaController.CadastrarLoja();
+                    break;
+                case 14:
+                    LojaView.ExibirLojasCadastradas();
+                    break;    
+                case 15:
+                    LojaController.AlterarLoja();
+                    break;    
+                case 16:
+                    LojaController.ExcluirLoja();
+                    break;    
+                
+                //Opções referentes a cartão de crédito    
+                case 17:
+                    CartaoDeCreditoController.CadastrarCartadeCredito();
+                    break;
+                 case 18:
+                    CartaoDeCreditoView.ExibirCartoesCadastrados();
                     break;
                 case 19:
-                    LojaView.ExibirLojasCadastradas();
+                    CartaoDeCreditoController.AlterarCartaoCredito();
                     break;
                 case 20:
-                    CartaoDeCreditoView.ExibirCartoesCadastrados();
+                    CartaoDeCreditoController.ExcluirCartao();
                     break;
                 case 21:
                     break;
                 }
-      
             }while (opcao != 22);
     }
 }

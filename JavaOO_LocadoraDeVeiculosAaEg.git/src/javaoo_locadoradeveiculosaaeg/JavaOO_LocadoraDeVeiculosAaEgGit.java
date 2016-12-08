@@ -22,6 +22,8 @@ public class JavaOO_LocadoraDeVeiculosAaEgGit
     {        
         BancoDeDadosLocadora.iniciarBancoDeDados();     
         
+        MassaTeste.MassaTeste.GerarMassaTeste();
+        
         MenuView.ExibirMenu();
         
         
