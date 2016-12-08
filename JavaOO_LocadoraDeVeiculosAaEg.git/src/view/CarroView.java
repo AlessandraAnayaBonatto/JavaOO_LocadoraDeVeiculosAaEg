@@ -39,9 +39,6 @@ public class CarroView {
             System.out.println("Quilometragem:" + c.getQuilometragem());
             System.out.println("Valores:" + c.getValores());
             System.out.println("Taxas:" + c.getTaxas());
-            
         }
-       
     }
-    
 }
