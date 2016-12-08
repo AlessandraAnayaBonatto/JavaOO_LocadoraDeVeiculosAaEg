@@ -7,7 +7,6 @@ package view;
 
 import bancoDeDados.BancoDeDadosLocadora;
 import models.CarroModel;
-import models.ClientePessoaFisicaModel;
 
 /**
  *

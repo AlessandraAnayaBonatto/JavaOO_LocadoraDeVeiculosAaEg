@@ -16,7 +16,7 @@ import models.ClientePessoaJuridicaModel;
 import models.LojaModel;
 import view.MenuView;
 
-public class JavaOO_LocadoraDeVeiculosAaEgGit 
+public class JavaOO_LocadoraDeVeiculosAaEg 
 {   
     public static void main(String[] args)
     {        
