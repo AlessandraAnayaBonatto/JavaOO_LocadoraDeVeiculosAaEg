@@ -58,7 +58,7 @@ public class MenuView {
 
 
     System.out.println("21 - SAIR");        
-    System.out.println("Digite sua Opção AQUI:");
+    System.out.print("Digite sua Opção AQUI: ");
 
     int opcao =  leitor.nextInt();
     leitor.nextLine();
