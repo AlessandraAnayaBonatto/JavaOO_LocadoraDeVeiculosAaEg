@@ -34,6 +34,7 @@ public class MassaTeste {
             cr.setTaxas(10);
             
             if((i % 2) == 0){
+                cr.setNivelTanque("Cheio");
                 cr.setTipoCambio("Automatico");
                 cr.setPotenciaMotor("1.6 16V");
                 cr.setQuantMalas(5);
@@ -48,6 +49,7 @@ public class MassaTeste {
                 cr.setCouro(true);
                 cr.setLimpeza(true);
             }else{
+                cr.setNivelTanque("Meio");
                 cr.setTipoCambio("Manual");
                 cr.setPotenciaMotor("1.0");
                 cr.setQuantMalas(3);

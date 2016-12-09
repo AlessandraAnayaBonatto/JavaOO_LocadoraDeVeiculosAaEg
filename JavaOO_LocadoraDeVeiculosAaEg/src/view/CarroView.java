@@ -30,7 +30,6 @@ public class CarroView {
             System.out.println("Potência do motor:" + c.getPotenciaMotor());
             System.out.println("Tipo de Câmbio:" + c.getTipoCambio());
             System.out.println("Tipo de combustivel:" + c.getTipoCombustivel());
-            System.out.println("Tipo de locação:" + c.getTipoLocacao());
             
             System.out.println("Quantidade de Malas:" + c.getQuantMalas());
             System.out.println("Quantidade de pessoas:" + c.getQuantPessoas());
