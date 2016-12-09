@@ -6,10 +6,6 @@
 package controller;
 
 import bancoDeDados.BancoDeDadosLocadora;
-import static controller.CarroController.PesquisarCarroPorCodigo;
-import static controller.LojaController.PesquisarLojaPorCnpj;
-import static controller.PessoaFisicaController.PesquisarPessoaPorCpf;
-import static controller.PessoaJuricaController.PesquisarPessoaPorCnpj;
 import models.CarroModel;
 import models.CartaoDeCreditoModel;
 import models.ClientePessoaFisicaModel;
@@ -21,6 +17,8 @@ import models.ClientePessoaJuridicaModel;
 import models.LocacaoModel;
 import models.PfLocacaoModel;
 import models.PjLocacaoModel;
+import controller.PessoaFisicaController;
+import controller.PessoaJuricaController;
 
 /**
  *
@@ -48,14 +46,12 @@ public class LocacaoController {
         }
     }
     
-    
-    
     public static void LocacaoPJ()
     {
         System.out.println("Informe o CNPJ:");
         String codCnpj = leitor.nextLine();
         
-        ClientePessoaJuridicaModel j = PesquisarPessoaPorCnpj(codCnpj);
+        ClientePessoaJuridicaModel j = PessoaJuricaController.PesquisarPessoaPorCnpj(codCnpj);
         
         if(j != null)
         {
@@ -66,7 +62,7 @@ public class LocacaoController {
             System.out.println("Informe o CPF:");
             String codCpf = leitor.nextLine();
         
-            ClientePessoaFisicaModel c = PesquisarPessoaPorCpf(codCpf);
+            ClientePessoaFisicaModel c = PessoaFisicaController.PesquisarPessoaPorCpf(codCpf);
         
         
         if (c != null)
@@ -81,7 +77,7 @@ public class LocacaoController {
             int CodCarro = leitor.nextInt();
             leitor.nextLine();
             
-            CarroModel cr  = PesquisarCarroPorCodigo(CodCarro);
+            CarroModel cr  = CarroController.PesquisarCarroPorCodigo(CodCarro);
             
             if(cr != null)
             {    
@@ -91,7 +87,7 @@ public class LocacaoController {
                 System.out.println("Informe o CNPJ da loja");
                 String cnpjLoja = leitor.nextLine();
                 
-                LojaModel l = PesquisarLojaPorCnpj(cnpjLoja);
+                LojaModel l = LojaController.PesquisarLojaPorCnpj(cnpjLoja);
                 
                 if (l != null)
                 {
@@ -153,7 +149,7 @@ public class LocacaoController {
         System.out.println("Informe o CPF:");
         String codCpf = leitor.nextLine();
         
-        ClientePessoaFisicaModel c = PesquisarPessoaPorCpf(codCpf);
+        ClientePessoaFisicaModel c = PessoaFisicaController.PesquisarPessoaPorCpf(codCpf);
         
         
         if (c != null)
@@ -168,7 +164,7 @@ public class LocacaoController {
             int CodCarro = leitor.nextInt();
             leitor.nextLine();
             
-            CarroModel cr  = PesquisarCarroPorCodigo(CodCarro);
+            CarroModel cr  = CarroController.PesquisarCarroPorCodigo(CodCarro);
             
             if(cr != null)
             {    
@@ -178,7 +174,7 @@ public class LocacaoController {
                 System.out.println("Informe o CNPJ da loja");
                 String cnpjLoja = leitor.nextLine();
                 
-                LojaModel l = PesquisarLojaPorCnpj(cnpjLoja);
+                LojaModel l = LojaController.PesquisarLojaPorCnpj(cnpjLoja);
                 
                 if (l != null)
                 {
@@ -259,9 +255,7 @@ public class LocacaoController {
         
         //Verificação de locação PJ ou Pf
         String tipo = null;
-        
         PfLocacaoModel antcpf = null;
-        
         PjLocacaoModel antcnpj = null;
         
         if(cpf != null )
@@ -283,16 +277,20 @@ public class LocacaoController {
                     antcnpj = lpj;
                 }
             }
+        }else{
+            System.out.println("");
+            System.out.println("CPF não localizado.");
+            System.out.println("");
         }
     
         
-        if(cpf != null && tipo.equalsIgnoreCase("PF") )
+        if(cpf != null && tipo.equalsIgnoreCase("PF"))
         {
             
             System.out.println("Digite o código do novo Cpf, (Anterior: " + antcpf.getClietePF().getCpf() + "): ");
             String novoCpf = leitor.nextLine();
             
-            ClientePessoaFisicaModel ncpf = PesquisarPessoaPorCpf(novoCpf);
+            ClientePessoaFisicaModel ncpf = PesquisarLocacaoPorCpf(novoCpf);
             
             if(ncpf != null)           
             {
@@ -301,14 +299,14 @@ public class LocacaoController {
                 int novoCarro = leitor.nextInt();
                 leitor.nextLine();           
 
-                CarroModel cr  = PesquisarCarroPorCodigo(novoCarro);    
+                CarroModel cr  = CarroController.PesquisarCarroPorCodigo(novoCarro);    
 
                 if(cr != null)
                 {
                     System.out.println("Digite o novo cpf para loja, (Anterior: " + antcpf.getLoja().getCnpj() + "): ");
                     String cpfLoja = leitor.nextLine();
 
-                    LojaModel lj = PesquisarLojaPorCnpj(cpfLoja);
+                    LojaModel lj = LojaController.PesquisarLojaPorCnpj(cpfLoja);
 
                     if (lj != null)
                     {
@@ -337,14 +335,14 @@ public class LocacaoController {
             System.out.println("Digite o código do novo Cnpj, (Anterior: " + antcnpj.getClientePj().getCnpj() + "): ");
             String novoCnpj = leitor.nextLine();
 
-                ClientePessoaJuridicaModel ncnpj = PesquisarPessoaPorCnpj(novoCnpj);
+                ClientePessoaJuridicaModel ncnpj = PessoaJuricaController.PesquisarPessoaPorCnpj(novoCnpj);
             
             if(ncnpj != null)
             {    
                 System.out.println("Digite o código do novo Cpf, (Anterior: " + antcnpj.getClietePF().getCpf() + "): ");
                 String novoCpf = leitor.nextLine();
 
-                ClientePessoaFisicaModel ncpf = PesquisarPessoaPorCpf(novoCpf);
+                ClientePessoaFisicaModel ncpf = PessoaFisicaController.PesquisarPessoaPorCpf(novoCpf);
 
                 if(ncpf != null)           
                 {
@@ -353,14 +351,14 @@ public class LocacaoController {
                     int novoCarro = leitor.nextInt();
                     leitor.nextLine();           
 
-                    CarroModel cr  = PesquisarCarroPorCodigo(novoCarro);    
+                    CarroModel cr  = CarroController.PesquisarCarroPorCodigo(novoCarro);    
 
                     if(cr != null)
                     {
                         System.out.println("Digite o novo cnpj para loja, (Anterior: " + antcnpj.getLoja().getCnpj() + "): ");
                         String cnpjLoja = leitor.nextLine();
 
-                        LojaModel lj = PesquisarLojaPorCnpj(cnpjLoja);
+                        LojaModel lj = LojaController.PesquisarLojaPorCnpj(cnpjLoja);
 
                         if (lj != null)
                         {
