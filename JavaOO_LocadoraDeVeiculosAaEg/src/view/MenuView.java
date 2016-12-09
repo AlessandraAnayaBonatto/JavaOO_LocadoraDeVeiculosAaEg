@@ -12,6 +12,7 @@ import controller.CarroController;
 import controller.LojaController;
 import java.util.Scanner;
 import controller.LocacaoController;
+import java.util.InputMismatchException;
 
 
 
@@ -28,10 +29,9 @@ public class MenuView {
     public static void ExibirMenu()
     {
         int opcao = 0;
-   
+        
         do
         {
-            
             System.out.println("--------------------LOCAÇÃO DE VEÍCULOS--------------------");
             System.out.println("******Essas são suas opcões******");
 
@@ -75,106 +75,115 @@ public class MenuView {
 
             System.out.println("31 - SAIR");        
             System.out.print("Digite sua Opção AQUI: ");
+        
+        try{  
+            opcao =  leitor.nextInt();
+            leitor.nextLine();
 
-                opcao =  leitor.nextInt();
-                leitor.nextLine();
-
-                switch (opcao)
-                {
-                    //Opções referentes a carro
-                    case 1:
-                        CarroController.CadastrarCarro();
-                        break;   
-                    case 2:
-                        CarroView.ExibirCarros();
-                        break;
-                    case 3:
-                        CarroView.ExibirCarroPorCodigo();
-                        break;    
-                    case 4 :
-                        CarroController.AlterarCarro();
-                        break;
-                    case 5:
-                        CarroController.ExcluirCarro();
-                        break;
-
-                    //Opções referentes a Cliente PF
-                    case 6:
-                        PessoaFisicaController.CadastrarPessoaFisica();
-                        break;
-                    case 7:
-                        PessoaFisicaView.ExibirPessoaFisica();
-                        break;
-                    case 8:
-                        PessoaFisicaView.ExibirPessoaFisicaPorCPF();
-                        break; 
-                    case 9 :
-                        PessoaFisicaController.AlterarPessoaFisica();
-                        break;    
-                    case 10:
-                        PessoaFisicaController.ExcluirPessoaFisica();
-                        break;
-
-                    //Opções referentes a Cliente PJ    
-                    case 11:
-                        PessoaJuricaController.CadastrarPessoaJuridica();
-                        break;
-                    case 12:
-                        PessoaJuridicaView.ExibirPessoaJuridica();
-                        break;
-                    case 13:
-                        PessoaJuridicaView.ExibirPessoaJuridicaPorCnpj();
-                        break;
-                    case 14:
-                        PessoaJuricaController.AlterarPessoaJuridica();
-                        break;    
-                    case 15:
-                        PessoaJuricaController.ExcluirPessoaJuridica();
-                        break;    
-
-                    //Opções referentes a loja 
-                    case 16:
-                        LojaController.CadastrarLoja();
-                        break;
-                    case 17:
-                        LojaView.ExibirLojasCadastradas();
-                        break;    
-                    case 18:
-                        LojaView.ExibirPessoaJuridicaPorCnpj();
-                        break; 
-                    case 19:
-                        LojaController.AlterarLoja();
-                        break;    
-                    case 20:
-                        LojaController.ExcluirLoja();
-                        break;    
-
-                    //Opções referentes a cartão de crédito    
-                    case 21:
-                        CartaoDeCreditoController.CadastrarCartadeCredito();
-                        break;
-                    case 22:
-                        CartaoDeCreditoView.ExibirCartoesCadastrados();
-                        break;
-                    case 23:
-                        CartaoDeCreditoView.ExibirCartoesCadastradosPorNumero();
-                        break;    
-                    case 24:
-                        CartaoDeCreditoController.AlterarCartaoCredito();
-                        break;
-                    case 25:
-                        CartaoDeCreditoController.ExcluirCartao();
-                        break;
-                    //Opções referentes a locação 
-                    case 26:
-                        LocacaoController.TipoLocacao();
+            switch (opcao)
+            {
+                //Opções referentes a carro
+                case 1:
+                    CarroController.CadastrarCarro();
+                    break;   
+                case 2:
+                    CarroView.ExibirCarros();
+                    break;
+                case 3:
+                    CarroView.ExibirCarroPorCodigo();
+                    break;    
+                case 4 :
+                    CarroController.AlterarCarro();
+                    break;
+                case 5:
+                    CarroController.ExcluirCarro();
                     break;
 
-                    case 31:
-                        break;
-                    }
-                    opcao = 0;            
-                }while (opcao != 23);
+                //Opções referentes a Cliente PF
+                case 6:
+                    PessoaFisicaController.CadastrarPessoaFisica();
+                    break;
+                case 7:
+                    PessoaFisicaView.ExibirPessoaFisica();
+                    break;
+                case 8:
+                    PessoaFisicaView.ExibirPessoaFisicaPorCPF();
+                    break; 
+                case 9 :
+                    PessoaFisicaController.AlterarPessoaFisica();
+                    break;    
+                case 10:
+                    PessoaFisicaController.ExcluirPessoaFisica();
+                    break;
+
+                //Opções referentes a Cliente PJ    
+                case 11:
+                    PessoaJuricaController.CadastrarPessoaJuridica();
+                    break;
+                case 12:
+                    PessoaJuridicaView.ExibirPessoaJuridica();
+                    break;
+                case 13:
+                    PessoaJuridicaView.ExibirPessoaJuridicaPorCnpj();
+                    break;
+                case 14:
+                    PessoaJuricaController.AlterarPessoaJuridica();
+                    break;    
+                case 15:
+                    PessoaJuricaController.ExcluirPessoaJuridica();
+                    break;    
+
+                //Opções referentes a loja 
+                case 16:
+                    LojaController.CadastrarLoja();
+                    break;
+                case 17:
+                    LojaView.ExibirLojasCadastradas();
+                    break;    
+                case 18:
+                    LojaView.ExibirPessoaJuridicaPorCnpj();
+                    break; 
+                case 19:
+                    LojaController.AlterarLoja();
+                    break;    
+                case 20:
+                    LojaController.ExcluirLoja();
+                    break;    
+
+                //Opções referentes a cartão de crédito    
+                case 21:
+                    CartaoDeCreditoController.CadastrarCartadeCredito();
+                    break;
+                case 22:
+                    CartaoDeCreditoView.ExibirCartoesCadastrados();
+                    break;
+                case 23:
+                    CartaoDeCreditoView.ExibirCartoesCadastradosPorNumero();
+                    break;    
+                case 24:
+                    CartaoDeCreditoController.AlterarCartaoCredito();
+                    break;
+                case 25:
+                    CartaoDeCreditoController.ExcluirCartao();
+                    break;
+                //Opções referentes a locação 
+                case 26:
+                    LocacaoController.TipoLocacao();
+                break;
+
+                case 31:
+                    break;
+                }
+            opcao = 0; 
+            
+           }catch(InputMismatchException e1){
+            System.out.println("");
+            System.out.println("Você não inseriu um numero, Este Menu suporta apenas numeros.");
+            System.out.println("");
+            leitor.nextLine();
+            } 
+        }while (opcao != 23);
+        
     }
 }
 
