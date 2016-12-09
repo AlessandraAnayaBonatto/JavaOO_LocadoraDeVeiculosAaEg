@@ -50,6 +50,18 @@ public class CartaoDeCreditoController {
         
     }
     
+     public static CartaoDeCreditoModel PesquisarCartaoPorNumero (String numeroCartao) 
+    {
+        
+        for(CartaoDeCreditoModel cc : BancoDeDadosLocadora.getTabelaCartaoDeCredito())
+        {
+            if(cc.getNumeroCartao().equalsIgnoreCase(numeroCartao))
+            {
+                return cc;
+            }      
+        }             
+        return null;
+    }
     
     public static void AlterarCartaoCredito() 
     {

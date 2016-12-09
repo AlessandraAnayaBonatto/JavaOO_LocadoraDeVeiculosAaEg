@@ -73,6 +73,21 @@ public class LojaController {
        
     }
     
+    public static LojaModel PesquisarPessoaPorCnpj (String codCnpj) 
+    {
+        
+        for(LojaModel j : BancoDeDadosLocadora.getTabelaLoja())
+        {
+            if(j.getCnpj().equalsIgnoreCase(codCnpj))
+            {
+                return j;
+            }      
+        }             
+        return null;
+ 
+    }
+    
+    
     public static void AlterarLoja() 
     {
        System.out.println("Digite o nome da loja você deseja alterar:");

@@ -135,7 +135,7 @@ public class CarroController {
     }
 
     
-    private static CarroModel PesquisarCarroPorCodigo(int codCarro)
+    public static CarroModel PesquisarCarroPorCodigo(int codCarro)
     {
         
         for(CarroModel c : BancoDeDadosLocadora.getTabelaCarro())

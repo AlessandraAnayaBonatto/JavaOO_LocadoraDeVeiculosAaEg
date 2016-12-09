@@ -37,32 +37,42 @@ public class MenuView {
 
             System.out.println("1 - Cadastrar Carro");
             System.out.println("2 - Exibir lista de carros para locação");
-            System.out.println("3 - Excluir carro cadastrado");
-            System.out.println("4 - Alterar carro cadastrado");
+            System.out.println("3 - Exibir carro por Código");
+            System.out.println("4 - Excluir carro cadastrado");
+            System.out.println("5 - Alterar carro cadastrado");
 
 
-            System.out.println("5 - Cadastrar Pessoa Fisica");
-            System.out.println("6 - Exibir lista de pessoas fisicas");
-            System.out.println("7 - Excluir pessoa fisica cadastrada");
-            System.out.println("8 - Alterar pessoa fisica cadastrada");
+            System.out.println("6 - Cadastrar Pessoa Fisica");
+            System.out.println("7 - Exibir lista de pessoas fisicas");
+            System.out.println("8 - Exibir pessoa fisica por CPF");
+            System.out.println("9 - Excluir pessoa fisica cadastrada");
+            System.out.println("10 - Alterar pessoa fisica cadastrada");
 
-            System.out.println("9 - Cadastrar Pessoa Juridica");
-            System.out.println("10 - Exibir lista de pessoas juridicas");
-            System.out.println("11 - Excluir pessoa juridica cadastrada");
-            System.out.println("12 - Alterar pessoa juridica cadastrada");
+            System.out.println("11 - Cadastrar Pessoa Juridica");
+            System.out.println("12 - Exibir lista de pessoas juridicas");
+            System.out.println("13 - Exibir pessoa juridica por CNPJ");
+            System.out.println("14 - Excluir pessoa juridica cadastrada");
+            System.out.println("15 - Alterar pessoa juridica cadastrada");
 
-            System.out.println("13 - Cadastrar Loja");
-            System.out.println("14 - Exibir lista de lojas");
-            System.out.println("15 - Excluir loja cadastrada");
-            System.out.println("16 - Alterar loja cadastrada");
+            System.out.println("16 - Cadastrar Loja");
+            System.out.println("17 - Exibir lista de lojas");
+            System.out.println("18 - Exibir loja por CNPJ");
+            System.out.println("19 - Excluir loja cadastrada");
+            System.out.println("20 - Alterar loja cadastrada");
 
-            System.out.println("17 - Cadastrar cartão de crédito");
-            System.out.println("18 - Exibir lista de cartões cadastrados");
-            System.out.println("19 - Excluir cartão cadastrado");
-            System.out.println("20 - Alterar cartão cadastrado");
+            System.out.println("21 - Cadastrar cartão de crédito");
+            System.out.println("22 - Exibir lista de cartões cadastrados");
+            System.out.println("22 - Exibir cartão por numero");
+            System.out.println("24 - Excluir cartão cadastrado");
+            System.out.println("25 - Alterar cartão cadastrado");
+            
+            System.out.println("26 - Efetuar Locação");
+            System.out.println("27 - Exibir Locações");
+            System.out.println("28 - Exibir Minha locação");
+            System.out.println("29 - Alterar Locação");
+            System.out.println("30 - Ecluir Locação");
 
-
-            System.out.println("21 - SAIR");        
+            System.out.println("31 - SAIR");        
             System.out.print("Digite sua Opção AQUI: ");
 
             opcao =  leitor.nextInt();
@@ -77,73 +87,91 @@ public class MenuView {
                 case 2:
                     CarroView.ExibirCarros();
                     break;
-                case 3 :
+                case 3:
+                    CarroView.ExibirCarroPorCodigo();
+                    break;    
+                case 4 :
                     CarroController.AlterarCarro();
                     break;
-                case 4:
+                case 5:
                     CarroController.ExcluirCarro();
                     break;
                 
                 //Opções referentes a Cliente PF
-                case 5:
+                case 6:
                     PessoaFisicaController.CadastrarPessoaFisica();
                     break;
-                case 6:
+                case 7:
                     PessoaFisicaView.ExibirPessoaFisica();
-                    break;    
-                case 7 :
+                    break;
+                case 8:
+                    PessoaFisicaView.ExibirPessoaFisicaPorCPF();
+                    break; 
+                case 9 :
                     PessoaFisicaController.AlterarPessoaFisica();
                     break;    
-                case 8:
+                case 10:
                     PessoaFisicaController.ExcluirPessoaFisica();
                     break;
                     
                 //Opções referentes a Cliente PJ    
-                case 9:
+                case 11:
                     PessoaJuricaController.CadastrarPessoaJuridica();
                     break;
-                case 10:
+                case 12:
                     PessoaJuridicaView.ExibirPessoaJuridica();
-                    break;    
-                case 11:
+                    break;
+                case 13:
+                    PessoaJuridicaView.ExibirPessoaJuridicaPorCnpj();
+                    break;
+                case 14:
                     PessoaJuricaController.AlterarPessoaJuridica();
                     break;    
-                case 12:
+                case 15:
                     PessoaJuricaController.ExcluirPessoaJuridica();
                     break;    
                 
                 //Opções referentes a loja 
-                case 13:
+                case 16:
                     LojaController.CadastrarLoja();
                     break;
-                case 14:
+                case 17:
                     LojaView.ExibirLojasCadastradas();
                     break;    
-                case 15:
+                case 18:
+                    LojaView.ExibirPessoaJuridicaPorCnpj();
+                    break; 
+                case 19:
                     LojaController.AlterarLoja();
                     break;    
-                case 16:
+                case 20:
                     LojaController.ExcluirLoja();
                     break;    
                 
                 //Opções referentes a cartão de crédito    
-                case 17:
+                case 21:
                     CartaoDeCreditoController.CadastrarCartadeCredito();
                     break;
-                 case 18:
+                case 22:
                     CartaoDeCreditoView.ExibirCartoesCadastrados();
                     break;
-                case 19:
+                case 23:
+                    CartaoDeCreditoView.ExibirCartoesCadastradosPorNumero();
+                    break;    
+                case 24:
                     CartaoDeCreditoController.AlterarCartaoCredito();
                     break;
-                case 20:
+                case 25:
                     CartaoDeCreditoController.ExcluirCartao();
                     break;
-                case 21:
+                //Opções referentes a locação 
+                
+                    
+                case 31:
                     break;
                 }
                 opcao = 0;            
-            }while (opcao != 22);
+            }while (opcao != 23);
     }
 }
 

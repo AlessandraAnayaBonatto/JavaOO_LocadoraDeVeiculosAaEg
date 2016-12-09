@@ -82,7 +82,7 @@ public class PessoaJuricaController {
         
         for(ClientePessoaJuridicaModel j : BancoDeDadosLocadora.getTabelaClientePessoaJuridica())
         {
-            if(j.getCnpj() == codCnpj)
+            if(j.getCnpj().equalsIgnoreCase(codCnpj))
             {
                 return j;
             }      

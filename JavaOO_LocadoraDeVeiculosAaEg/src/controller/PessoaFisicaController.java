@@ -98,7 +98,7 @@ public class PessoaFisicaController {
         
         for(ClientePessoaFisicaModel p : BancoDeDadosLocadora.getTabelaClientesPessoaFisica())
         {
-            if(p.getCpf() == codCpf)
+            if(p.getCpf().equalsIgnoreCase(codCpf))
             {
                 return p;
             }      
