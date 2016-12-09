@@ -9,7 +9,7 @@ package models;
  *
  * @author eduar
  */
-public abstract class LocaçãoModel {
+public abstract class LocacaoModel {
     private LojaModel loja;
     private CarroModel carro;
     private ClientePessoaFisicaModel clietePF;
