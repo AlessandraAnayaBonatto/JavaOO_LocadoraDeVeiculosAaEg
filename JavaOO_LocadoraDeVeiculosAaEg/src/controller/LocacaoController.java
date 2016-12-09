@@ -18,6 +18,7 @@ import models.PfLocacaoModel;
 import models.PjLocacaoModel;
 import java.util.Scanner;
 import models.ClientePessoaJuridicaModel;
+import models.LocacaoModel;
 import models.PfLocacaoModel;
 import models.PjLocacaoModel;
 
@@ -226,12 +227,166 @@ public class LocacaoController {
         {
             System.out.println("CPF não encontrado, Por favor verifique se o CPF está cadastrado!!");
         }
-        
-        
-        
+
     }
 
-
- 
+    public static ClientePessoaFisicaModel PesquisarLocacaoPorCpf ( String codCpf ) 
+    {
+        for(PfLocacaoModel lpf : BancoDeDadosLocadora.getTabelaLocacaoPessoaFisica())
+        {
+            if(lpf.getClietePF().getCpf().equalsIgnoreCase(codCpf))
+            {
+                return lpf.getClietePF();
+            }      
+        }
+        
+        for(PjLocacaoModel lpj : BancoDeDadosLocadora.getTabelaLocacaoPessoaJuridica())
+        {
+            if(lpj.getClietePF().getCpf().equalsIgnoreCase(codCpf))
+            {
+                return lpj.getClietePF();
+            }      
+        }
+        return null;
+    }
+  
+    public void AlterarLocacao()
+    {
+        System.out.println("Informe o Cpf da locação que deseja alterar");
+        String codCpf = leitor.next();        
+        
+        ClientePessoaFisicaModel cpf = PesquisarLocacaoPorCpf(codCpf);
+        
+        //Verificação de locação PJ ou Pf
+        String tipo = null;
+        
+        PfLocacaoModel antcpf = null;
+        
+        PjLocacaoModel antcnpj = null;
+        
+        if(cpf != null )
+        {
+            for (PfLocacaoModel lpf : BancoDeDadosLocadora.getTabelaLocacaoPessoaFisica())
+            {
+                if(lpf.getClietePF().getCpf().equalsIgnoreCase(codCpf))
+                {
+                    tipo = "PF";    
+                    antcpf = lpf;
+                }
+            }
+            
+            for (PjLocacaoModel lpj : BancoDeDadosLocadora.getTabelaLocacaoPessoaJuridica())
+            {
+                if(lpj.getClietePF().getCpf().equalsIgnoreCase(codCpf))
+                {
+                    tipo = "PJ";    
+                    antcnpj = lpj;
+                }
+            }
+        }
     
+        
+        if(cpf != null && tipo.equalsIgnoreCase("PF") )
+        {
+            
+            System.out.println("Digite o código do novo Cpf, (Anterior: " + antcpf.getClietePF().getCpf() + "): ");
+            String novoCpf = leitor.nextLine();
+            
+            ClientePessoaFisicaModel ncpf = PesquisarPessoaPorCpf(novoCpf);
+            
+            if(ncpf != null)           
+            {
+                            
+                System.out.println("Digite o código do novo Carro, (Anterior: " + antcpf.getCarro().getCodigo() + "): ");
+                int novoCarro = leitor.nextInt();
+                leitor.nextLine();           
+
+                CarroModel cr  = PesquisarCarroPorCodigo(novoCarro);    
+
+                if(cr != null)
+                {
+                    System.out.println("Digite o novo cpf para loja, (Anterior: " + antcpf.getLoja().getCnpj() + "): ");
+                    String cpfLoja = leitor.nextLine();
+
+                    LojaModel lj = PesquisarLojaPorCnpj(cpfLoja);
+
+                    if (lj != null)
+                    {
+                        System.out.println("Informe o novo número do Cartão, (Anterior: " + antcpf.getCartao().getNumeroCartao() + "):");
+                        String numeroCartao = leitor.nextLine();
+
+                        CartaoDeCreditoModel cc = CartaoDeCreditoController.PesquisarCartaoPorNumero(numeroCartao);
+
+                        if (cc != null)
+                        {
+                            antcpf.setClietePF(cpf);
+                            antcpf.setCarro(cr);
+                            antcpf.setLoja(lj);
+                            antcpf.setCartao(cc);                        
+                            
+                            System.out.println("Locação alterada com Sucesso!"); 
+                        }
+
+                    }
+
+                }
+                   
+            }
+        }else           
+        {
+            System.out.println("Digite o código do novo Cnpj, (Anterior: " + antcnpj.getClientePj().getCnpj() + "): ");
+            String novoCnpj = leitor.nextLine();
+
+                ClientePessoaJuridicaModel ncnpj = PesquisarPessoaPorCnpj(novoCnpj);
+            
+            if(ncnpj != null)
+            {    
+                System.out.println("Digite o código do novo Cpf, (Anterior: " + antcnpj.getClietePF().getCpf() + "): ");
+                String novoCpf = leitor.nextLine();
+
+                ClientePessoaFisicaModel ncpf = PesquisarPessoaPorCpf(novoCpf);
+
+                if(ncpf != null)           
+                {
+
+                    System.out.println("Digite o código do novo Carro, (Anterior: " + antcnpj.getCarro().getCodigo() + "): ");
+                    int novoCarro = leitor.nextInt();
+                    leitor.nextLine();           
+
+                    CarroModel cr  = PesquisarCarroPorCodigo(novoCarro);    
+
+                    if(cr != null)
+                    {
+                        System.out.println("Digite o novo cnpj para loja, (Anterior: " + antcnpj.getLoja().getCnpj() + "): ");
+                        String cnpjLoja = leitor.nextLine();
+
+                        LojaModel lj = PesquisarLojaPorCnpj(cnpjLoja);
+
+                        if (lj != null)
+                        {
+                            System.out.println("Informe o novo número do Cartão, (Anterior: " + antcnpj.getCartao().getNumeroCartao() + "):");
+                            String numeroCartao = leitor.nextLine();
+
+                            CartaoDeCreditoModel cc = CartaoDeCreditoController.PesquisarCartaoPorNumero(numeroCartao);
+
+                            if (cc != null)
+                            {
+                                antcnpj.setClietePF(cpf);
+                                antcnpj.setCarro(cr);
+                                antcnpj.setLoja(lj);
+                                antcnpj.setCartao(cc);                        
+
+                                System.out.println("Locação alterada com Sucesso!"); 
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+            
+        }
+    }
 }
+
