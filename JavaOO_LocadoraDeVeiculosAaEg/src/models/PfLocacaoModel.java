@@ -11,4 +11,11 @@ package models;
  */
 public class PfLocacaoModel extends LocacaoModel{
     
+    
+    
+  
+   
+    
+    
+    
 }
