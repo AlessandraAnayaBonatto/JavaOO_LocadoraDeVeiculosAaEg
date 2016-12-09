@@ -14,14 +14,10 @@ import java.util.Scanner;
 import controller.LocacaoController;
 import java.util.InputMismatchException;
 
-
-
 /**
  *
  * @author 1614837
  */
-
-
 public class MenuView {    
     
     private static Scanner leitor = new Scanner(System.in);
