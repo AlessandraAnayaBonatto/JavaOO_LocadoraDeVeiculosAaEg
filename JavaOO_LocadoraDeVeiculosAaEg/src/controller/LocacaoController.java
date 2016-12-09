@@ -250,7 +250,7 @@ public class LocacaoController {
         return null;
     }
   
-    public void AlterarLocacao()
+    public static void AlterarLocacao()
     {
         System.out.println("Informe o Cpf da locação que deseja alterar");
         String codCpf = leitor.next();        

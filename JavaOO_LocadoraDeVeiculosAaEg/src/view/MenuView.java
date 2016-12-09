@@ -170,7 +170,9 @@ public class MenuView {
                 case 26:
                     LocacaoController.TipoLocacao();
                 break;
-
+                case 29:
+                    LocacaoController.AlterarLocacao();
+                    break;
                 case 31:
                     break;
                 }
@@ -182,7 +184,7 @@ public class MenuView {
             System.out.println("");
             leitor.nextLine();
             } 
-        }while (opcao != 23);
+        }while (opcao != 31);
         
     }
 }
