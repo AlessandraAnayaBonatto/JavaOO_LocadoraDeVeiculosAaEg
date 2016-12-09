@@ -388,5 +388,44 @@ public class LocacaoController {
             
         }
     }
+    
+    
+    public static void ExcluirLocacao()
+    {
+        System.out.println("Digite o CPF da locação que deseja excluir");
+        String cpflocacao = leitor.nextLine();
+        
+        if(cpflocacao != null )
+        {
+            for (PfLocacaoModel lpf : BancoDeDadosLocadora.getTabelaLocacaoPessoaFisica())
+            {
+                if(lpf.getClietePF().getCpf().equalsIgnoreCase(cpflocacao))
+                {
+                    BancoDeDadosLocadora.getTabelaLocacaoPessoaFisica().remove(lpf);
+                    
+                    System.out.println("");
+                    System.out.println("Excluido locação pessoa fisica!!");
+                }
+            }
+            
+            for (PjLocacaoModel lpj : BancoDeDadosLocadora.getTabelaLocacaoPessoaJuridica())
+            {
+                if(lpj.getClietePF().getCpf().equalsIgnoreCase(cpflocacao))
+                {
+                    BancoDeDadosLocadora.getTabelaLocacaoPessoaJuridica().remove(lpj);
+                    
+                    System.out.println("");
+                    System.out.println("Excluido locação pessoa juridaca");
+                }
+            }
+        }
+        
+        
+        
+    }
+            
+    
+    
+    
 }
 

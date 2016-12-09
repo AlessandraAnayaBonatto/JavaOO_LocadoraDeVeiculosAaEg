@@ -68,12 +68,13 @@ public class MenuView {
             System.out.println("25 - Alterar cartão cadastrado");
             
             System.out.println("26 - Efetuar Locação");
-            System.out.println("27 - Exibir Locações");
-            System.out.println("28 - Exibir Minha locação");
-            System.out.println("29 - Alterar Locação");
-            System.out.println("30 - Ecluir Locação");
+            System.out.println("27 - Exibir Locações Pessoa Fisica");
+            System.out.println("28 - Exibir Locações Pessoa Juridica");
+            System.out.println("29 - Exibir Minha locação");
+            System.out.println("30 - Alterar Locação");
+            System.out.println("31 - Ecluir Locação");
 
-            System.out.println("31 - SAIR");        
+            System.out.println("32 - SAIR");        
             System.out.print("Digite sua Opção AQUI: ");
         
         try{  
@@ -170,10 +171,22 @@ public class MenuView {
                 case 26:
                     LocacaoController.TipoLocacao();
                 break;
+                case 27:
+                    LocacaoView.ExibirLocacaoPessoaFisica();
+                    break;
+                case 28:
+                    LocacaoView.ExibirLocacaoPessoaJuridica();
+                    break;
                 case 29:
+                    
+                    break;
+                case 30:
                     LocacaoController.AlterarLocacao();
                     break;
                 case 31:
+                    LocacaoController.ExcluirLocacao();
+                    break;
+                case 32:
                     break;
                 }
             opcao = 0; 
@@ -184,7 +197,7 @@ public class MenuView {
             System.out.println("");
             leitor.nextLine();
             } 
-        }while (opcao != 31);
+        }while (opcao != 32);
         
     }
 }
