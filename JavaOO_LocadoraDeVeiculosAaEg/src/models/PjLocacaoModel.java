@@ -5,11 +5,13 @@
  */
 package models;
 
+import controller.PjLocacaoInterface;
+
 /**
  *
  * @author eduar
  */
-public class PjLocacaoModel extends LocacaoModel{
+public class PjLocacaoModel extends LocacaoModel implements PjLocacaoInterface{
     private ClientePessoaJuridicaModel clientePj;
 
     public ClientePessoaJuridicaModel getClientePj() {
@@ -20,5 +22,14 @@ public class PjLocacaoModel extends LocacaoModel{
         this.clientePj = clientePj;
     }
     
-    
+    @Override
+    public boolean ValidaCnpj (String codCnpj){
+        ClientePessoaJuridicaModel pj = controller.PessoaJuricaController.PesquisarPessoaPorCnpj(codCnpj);
+        
+        if(pj!= null){
+            return true;
+        }else{
+          return false;
+        }
+    }
 }

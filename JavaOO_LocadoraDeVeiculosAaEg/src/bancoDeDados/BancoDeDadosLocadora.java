@@ -12,6 +12,8 @@ import models.CartaoDeCreditoModel;
 import models.ClientePessoaFisicaModel;
 import models.ClientePessoaJuridicaModel;
 import models.LojaModel;
+import models.PfLocacaoModel;
+import models.PjLocacaoModel;
 
 /**
  Classe criada para armazenamento das informações inseridas no sistema
@@ -29,6 +31,10 @@ public class BancoDeDadosLocadora {
     
     // Listas para armazenamentos de novas lojas
     private static List<LojaModel> tabelaLoja;
+    
+    // Listas para armazenamentos de novas locações pessoa fisica ou juridica.
+    private static List<PfLocacaoModel> tabelaLocacaoPessoaFisica;
+    private static List<PjLocacaoModel> tabelaLocacaoPessoaJuridica;
     
     public static List<ClientePessoaFisicaModel> getTabelaClientesPessoaFisica() {
         return tabelaClientesPessoaFisica;
@@ -50,11 +56,22 @@ public class BancoDeDadosLocadora {
         return tabelaLoja;
     }
     
+    public static List<PfLocacaoModel> getTabelaLocacaoPessoaFisica() {
+        return tabelaLocacaoPessoaFisica;
+    }
+
+    public static List<PjLocacaoModel> getTabelaLocacaoPessoaJuridica() {
+        return tabelaLocacaoPessoaJuridica;
+    }
+    
     public static void iniciarBancoDeDados (){
         tabelaClientesPessoaFisica = new ArrayList<ClientePessoaFisicaModel>();
         tabelaClientePessoaJuridica = new ArrayList<ClientePessoaJuridicaModel>();
         tabelaCartaoDeCredito = new  ArrayList<CartaoDeCreditoModel>();
         tabelaCarro = new ArrayList<CarroModel>();
         tabelaLoja = new ArrayList<LojaModel>();
+        tabelaLocacaoPessoaFisica = new ArrayList<PfLocacaoModel>();
+        tabelaLocacaoPessoaJuridica = new ArrayList<PjLocacaoModel>();
+                
     }
 }
