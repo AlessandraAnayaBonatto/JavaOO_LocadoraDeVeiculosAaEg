@@ -43,7 +43,7 @@ public class LojaView {
        
     }
     
-    public static void ExibirPessoaJuridicaPorCnpj() 
+    public static void ExibirLojaPorCnpj() 
     {
         System.out.println("");
         System.out.println("***Exibir loja por CNPJ***");

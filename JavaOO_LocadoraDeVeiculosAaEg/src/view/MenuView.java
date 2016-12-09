@@ -141,7 +141,7 @@ public class MenuView {
                     LojaView.ExibirLojasCadastradas();
                     break;    
                 case 18:
-                    LojaView.ExibirPessoaJuridicaPorCnpj();
+                    LojaView.ExibirLojaPorCnpj();
                     break; 
                 case 19:
                     LojaController.AlterarLoja();
