@@ -68,13 +68,14 @@ public class MenuView {
             System.out.println("25 - Alterar cartão cadastrado");
             
             System.out.println("26 - Efetuar Locação");
-            System.out.println("27 - Exibir Locações Pessoa Fisica");
-            System.out.println("28 - Exibir Locações Pessoa Juridica");
-            System.out.println("29 - Exibir Minha locação");
-            System.out.println("30 - Alterar Locação");
-            System.out.println("31 - Ecluir Locação");
+            System.out.println("27 - Exibir Lista de Locações Pessoa Fisica");
+            System.out.println("28 - Exibir Lista de Locações Pessoa Juridica");
+            System.out.println("29 - Exibir locação por CPF ");
+            System.out.println("30 - Exibir locação por CNPJ ");
+            System.out.println("31 - Alterar Locação");
+            System.out.println("32 - Ecluir Locação");
 
-            System.out.println("32 - SAIR");        
+            System.out.println("33 - SAIR");        
             System.out.print("Digite sua Opção AQUI: ");
         
         try{  
@@ -178,15 +179,18 @@ public class MenuView {
                     LocacaoView.ExibirLocacaoPessoaJuridica();
                     break;
                 case 29:
-                    
+                    LocacaoView.ExibirLocacaoPorCpf();
                     break;
                 case 30:
-                    LocacaoController.AlterarLocacao();
+                    LocacaoView.ExibirLocacaoPorCnpj();
                     break;
                 case 31:
-                    LocacaoController.ExcluirLocacao();
+                    LocacaoController.AlterarLocacao();
                     break;
                 case 32:
+                    LocacaoController.ExcluirLocacao();
+                    break;
+                case 33:
                     break;
                 }
             opcao = 0; 
@@ -197,7 +201,7 @@ public class MenuView {
             System.out.println("");
             leitor.nextLine();
             } 
-        }while (opcao != 32);
+        }while (opcao != 33);
         
     }
 }
