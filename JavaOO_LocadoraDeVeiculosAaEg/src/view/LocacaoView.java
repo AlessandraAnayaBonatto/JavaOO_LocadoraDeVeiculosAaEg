@@ -6,7 +6,10 @@
 package view;
 import bancoDeDados.BancoDeDadosLocadora;
 import controller.LocacaoController;
+import static controller.LocacaoController.PesquisarLocacaoPorCpf;
+import controller.LojaController;
 import java.util.Scanner;
+import models.ClientePessoaFisicaModel;
 import models.ClientePessoaJuridicaModel;
 import models.LocacaoModel;
 import models.LojaModel;
@@ -72,8 +75,74 @@ public class LocacaoView
         }
         
     }
+    
+    
+    public static void ExibirLocacaoPorCpf() 
+    {
         
+        System.out.println("");
+        System.out.println("***Exibir locacao por cpf***");
+        System.out.print("Informe O Cpf: ");
+        String cpf = leitor.nextLine(); 
+        
+        ClientePessoaFisicaModel pf = PesquisarLocacaoPorCpf(cpf);
+    
+        System.out.println("");
+        if(pf != null){
+            System.out.println("Dados locação pessoa Fisica");
+            for(PfLocacaoModel f : BancoDeDadosLocadora.getTabelaLocacaoPessoaFisica())
+            {
+                if(pf.equals(f))
+                {                    
+                    System.out.println("");
+                    System.out.println("CPF:" + f.getClietePF());
+                    System.out.println("CARRO:" + f.getCarro());
+                    System.out.println("LOJA:" + f.getLoja());
+                    System.out.println("CARTÃO:" + f.getCartao());
+                    System.out.println("");
+                }    
+            }
+        }else{
+            System.out.println("CPF não cadastrado.");
+            System.out.println("");
+        }
+        
+    } 
+    
+        public static void ExibirLocacaoPorCnpj() 
+        {
+        
+            System.out.println("");
+            System.out.println("***Exibir locacao por cnpj***");
+            System.out.print("Informe O Cnpj: ");
+            String cnpj = leitor.nextLine(); 
+
+            ClientePessoaFisicaModel pj = PesquisarLocacaoPorCpf(cnpj);
+
+            System.out.println("");
+            if(pj != null){
+                System.out.println("Dados locação pessoa Fisica");
+                for(PjLocacaoModel j : BancoDeDadosLocadora.getTabelaLocacaoPessoaJuridica())
+                {
+                    if(pj.equals(j))
+                    {                    
+                        System.out.println("");
+                        System.out.println("CNPJ:" + j.getClientePj());
+                        System.out.println("CPF:" + j.getClietePF());
+                        System.out.println("CARRO:" + j.getCarro());
+                        System.out.println("LOJA:" + j.getLoja());
+                        System.out.println("CARTÃO:" + j.getCartao());
+                        System.out.println("");
+                    }    
+                }
+            }else{
+                System.out.println("CNPJ não cadastrado.");
+                System.out.println("");
+            }
+ 
+    }
 }
+
         
     
     
