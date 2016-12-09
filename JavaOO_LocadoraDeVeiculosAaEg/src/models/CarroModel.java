@@ -36,7 +36,7 @@ public class CarroModel {
     private int quilometragem;
     private float valores;
     private float taxas;
-    private String tipoLocacao;
+    
 
     /**
      * @return the modelo
@@ -371,19 +371,7 @@ public class CarroModel {
         this.taxas = taxas;
     }
 
-    /**
-     * @return the tipoLocacao
-     */
-    public String getTipoLocacao() {
-        return tipoLocacao;
-    }
-
-    /**
-     * @param tipoLocacao the tipoLocacao to set
-     */
-    public void setTipoLocacao(String tipoLocacao) {
-        this.tipoLocacao = tipoLocacao;
-    }
+    
     
   
     

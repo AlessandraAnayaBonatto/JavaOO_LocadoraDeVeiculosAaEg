@@ -86,10 +86,8 @@ public class CarroController {
         String cambioCarro = leitor.nextLine(); 
    
         System.out.println("Informe qual nivel está o tanque:");
-        String tanqueCarro = leitor.nextLine(); 
-        
-        System.out.println("Informe o tipo de locação:");
-        String tipoLocacaoCarro = leitor.nextLine();         
+        String tanqueCarro = leitor.nextLine();       
+               
          
         System.out.println("Informe a quilometragem:");
         int quilometragemCarro = leitor.nextInt(); 
@@ -127,7 +125,6 @@ public class CarroController {
         c.setTipoCombustivel(combustivelCarro);
         c.setTipoCambio(cambioCarro);
         c.setNivelTanque(tanqueCarro);
-        c.setTipoLocacao(tipoLocacaoCarro);
         c.setQuilometragem(quilometragemCarro);
         c.setValores(valorCarro);
         c.setTaxas(taxasCarro);
@@ -285,11 +282,6 @@ public class CarroController {
             String novoTanqueCarro = leitor.nextLine(); 
             
                 c.setNivelTanque(novoTanqueCarro);
-
-            System.out.println("Informe o tipo de locação: , (Anterior: " + c.getTipoLocacao() + "):");
-            String novoTipoLocacaoCarro = leitor.nextLine(); 
-            
-                c.setTipoLocacao(novoTipoLocacaoCarro);
 
             System.out.println("Informe a quilometragem: , (Anterior: " + c.getQuilometragem() + "):");
             int novaQuilometragemCarro = leitor.nextInt(); 
