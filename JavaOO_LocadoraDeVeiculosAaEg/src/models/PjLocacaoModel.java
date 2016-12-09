@@ -13,7 +13,8 @@ import controller.PjLocacaoInterface;
  */
 public class PjLocacaoModel extends LocacaoModel implements PjLocacaoInterface{
     private ClientePessoaJuridicaModel clientePj;
-
+    private String status;
+    
     public ClientePessoaJuridicaModel getClientePj() {
         return clientePj;
     }
@@ -22,14 +23,19 @@ public class PjLocacaoModel extends LocacaoModel implements PjLocacaoInterface{
         this.clientePj = clientePj;
     }
     
+   
+    
+     public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
     @Override
-    public boolean ValidaCnpj (String codCnpj){
-        ClientePessoaJuridicaModel pj = controller.PessoaJuricaController.PesquisarPessoaPorCnpj(codCnpj);
-        
-        if(pj!= null){
-            return true;
-        }else{
-          return false;
-        }
+    public  String AlugaParaCnpj (){
+            this.status = "Locação efetuada com Sucesso!!";
+            return status;
     }
 }

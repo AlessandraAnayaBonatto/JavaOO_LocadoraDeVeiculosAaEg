@@ -14,7 +14,8 @@ import models.CarroModel;
 import models.CartaoDeCreditoModel;
 import models.ClientePessoaFisicaModel;
 import models.LojaModel;
-
+import models.PfLocacaoModel;
+import models.PjLocacaoModel;
 import java.util.Scanner;
 import models.ClientePessoaJuridicaModel;
 import models.PfLocacaoModel;
@@ -27,6 +28,26 @@ import models.PjLocacaoModel;
 public class LocacaoController {
     
     private static Scanner leitor = new Scanner(System.in);
+    
+    public static void TipoLocacao(){
+        System.out.println("");
+        System.out.println("Efetuar Locação");
+        System.out.println("");
+        System.out.print("Informe o tipo de Locação (PF para Pessoa Fisica ou PJ para Pessoa juridica): ");
+        String tipo = leitor.nextLine();
+        
+        if(tipo.equalsIgnoreCase("pf")){
+            LocacaoPF();
+        }else if(tipo.equalsIgnoreCase("pj")){
+            LocacaoPJ();
+        }else{
+            System.out.println("");
+            System.out.println("Tipo invalido.");
+            System.out.println("");
+        }
+    }
+    
+    
     
     public static void LocacaoPJ()
     {
@@ -95,9 +116,7 @@ public class LocacaoController {
                         pj.setCartao(cc);
                         
                         BancoDeDadosLocadora.getTabelaLocacaoPessoaJuridica().add(pj);
-                        
-                        System.out.println("Locação efetuada com Sucesso!!");
-                
+                        System.out.println(pj.AlugaParaCnpj());
                     }else
                     {
                        System.out.println("Cartão não encontrado, Por favor verifique se o cartão está cadastrado!!");
@@ -184,7 +203,7 @@ public class LocacaoController {
                         
                         BancoDeDadosLocadora.getTabelaLocacaoPessoaFisica().add(pf);
                         
-                        System.out.println("Locação efetuada com Sucesso!!");
+                        System.out.println(pf.AlugaParaCpf());
                 
                     }else
                     {
@@ -211,6 +230,7 @@ public class LocacaoController {
         
         
     }
+
 
  
     

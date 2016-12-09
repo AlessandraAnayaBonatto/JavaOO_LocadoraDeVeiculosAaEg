@@ -11,6 +11,7 @@ import controller.PessoaJuricaController;
 import controller.CarroController;
 import controller.LojaController;
 import java.util.Scanner;
+import controller.LocacaoController;
 
 
 
@@ -165,7 +166,9 @@ public class MenuView {
                         CartaoDeCreditoController.ExcluirCartao();
                         break;
                     //Opções referentes a locação 
-
+                    case 26:
+                        LocacaoController.TipoLocacao();
+                    break;
 
                     case 31:
                         break;

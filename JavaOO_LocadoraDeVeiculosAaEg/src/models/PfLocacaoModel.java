@@ -13,14 +13,19 @@ import controller.PfLocacaoInterface;
  */
 public class PfLocacaoModel extends LocacaoModel implements PfLocacaoInterface{
 
+    private String status;
+    
+     public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
     @Override
-    public boolean ValidaCpf (String codCpf){
-        ClientePessoaFisicaModel pf = controller.PessoaFisicaController.PesquisarPessoaPorCpf(codCpf);
-        
-        if(pf!= null){
-            return true;
-        }else{
-          return false;
-        }
+    public  String AlugaParaCpf (){
+            this.status = "Locação efetuada com Sucesso!!";
+            return status;
     }
 }

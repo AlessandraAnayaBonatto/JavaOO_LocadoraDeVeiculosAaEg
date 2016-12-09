@@ -10,5 +10,5 @@ package controller;
  * @author eduar
  */
 public interface PjLocacaoInterface {
-    boolean ValidaCnpj (String codCnpj);
+    public String AlugaParaCnpj ();
 }

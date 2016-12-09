@@ -10,5 +10,5 @@ package controller;
  * @author eduar
  */
 public interface PfLocacaoInterface {
-    boolean ValidaCpf (String codCpf);
+    public String AlugaParaCpf ();
 }
