@@ -7,6 +7,8 @@ package controller;
 
 import java.util.Scanner;
 import bancoDeDados.BancoDeDadosLocadora;
+import static controller.CarroController.PesquisarCarroPorCodigo;
+import models.CarroModel;
 import models.LojaModel;
 
 /**
@@ -90,10 +92,10 @@ public class LojaController {
     
     public static void AlterarLoja() 
     {
-       System.out.println("Digite o nome da loja você deseja alterar:");
-       String nomeLoja = leitor.nextLine();
+       System.out.println("Digite o CNPJ da loja você deseja alterar:");
+       String cnpjLoja = leitor.nextLine();
       
-        LojaModel l = new LojaModel ();
+       LojaModel l = PesquisarLojaPorCnpj (cnpjLoja);
         
        
         if (l != null)

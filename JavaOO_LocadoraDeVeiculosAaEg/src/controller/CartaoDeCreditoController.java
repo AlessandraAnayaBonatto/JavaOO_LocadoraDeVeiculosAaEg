@@ -67,7 +67,7 @@ public class CartaoDeCreditoController {
     public static void AlterarCartaoCredito() 
     {
         System.out.println("Digite o código do cartão que deseja alterar:");
-        int numeroCartao = leitor.nextInt();
+        String numeroCartao = leitor.nextLine();
         leitor.nextLine(); 
        
         CartaoDeCreditoModel c = PesquisarCartaoPorNumero(numeroCartao);
