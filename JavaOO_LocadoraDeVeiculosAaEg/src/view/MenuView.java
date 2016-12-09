@@ -63,7 +63,7 @@ public class MenuView {
 
             System.out.println("21 - Cadastrar cartão de crédito");
             System.out.println("22 - Exibir lista de cartões cadastrados");
-            System.out.println("22 - Exibir cartão por numero");
+            System.out.println("22 - Exibir cartão por número");
             System.out.println("24 - Excluir cartão cadastrado");
             System.out.println("25 - Alterar cartão cadastrado");
             
@@ -178,7 +178,7 @@ public class MenuView {
             
            }catch(InputMismatchException e1){
             System.out.println("");
-            System.out.println("Você não inseriu um numero, Este Menu suporta apenas numeros.");
+            System.out.println("Você não inseriu um número, Este Menu suporta apenas números.");
             System.out.println("");
             leitor.nextLine();
             } 
