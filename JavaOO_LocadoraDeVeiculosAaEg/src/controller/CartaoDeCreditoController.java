@@ -8,6 +8,7 @@ package controller;
 import java.util.Scanner;
 import bancoDeDados.BancoDeDadosLocadora;
 import models.CartaoDeCreditoModel;
+import models.LojaModel;
 
 /**
  *
@@ -65,10 +66,11 @@ public class CartaoDeCreditoController {
     
     public static void AlterarCartaoCredito() 
     {
-       System.out.println("Digite o numerodo cartão que deseja alterar:");
-       String numeroCartao = leitor.nextLine();
-      
-         CartaoDeCreditoModel c = new CartaoDeCreditoModel ();
+        System.out.println("Digite o código do cartão que deseja alterar:");
+        int numeroCartao = leitor.nextInt();
+        leitor.nextLine(); 
+       
+        CartaoDeCreditoModel c = PesquisarCartaoPorNumero(numeroCartao);
         
        
         if (c != null)
@@ -126,6 +128,9 @@ public class CartaoDeCreditoController {
                 System.out.println("Cartão não cadastrado no sistema!!!");
             }     
 
-        }
+        
 
-    }
+        }
+}
+
+

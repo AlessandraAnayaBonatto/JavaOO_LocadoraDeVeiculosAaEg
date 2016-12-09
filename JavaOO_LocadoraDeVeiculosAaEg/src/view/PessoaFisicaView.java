@@ -59,7 +59,7 @@ public class PessoaFisicaView {
         
         System.out.println("");
         if(pf != null){
-            System.out.println("Dados Pesso Fisica");
+            System.out.println("Dados Pessoa Fisica");
             for(ClientePessoaFisicaModel f : BancoDeDadosLocadora.getTabelaClientesPessoaFisica())
             {
                 if(pf.equals(f)){
