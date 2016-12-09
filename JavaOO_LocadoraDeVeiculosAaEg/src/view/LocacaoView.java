@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package view;
+import controller.LocacaoController;
 import java.util.Scanner;
 
 
@@ -23,11 +24,13 @@ public class LocacaoView
     
     if("PJ".equals(codLocacao))
     {
-       //LocacaoController.LocacaoPJ(); 
+       LocacaoController.LocacaoPJ(); 
     }else
     {
-       //LocacaoController.LocacaoPF();
+       LocacaoController.LocacaoPF();
     }
        
+    
+    
     }
 }
