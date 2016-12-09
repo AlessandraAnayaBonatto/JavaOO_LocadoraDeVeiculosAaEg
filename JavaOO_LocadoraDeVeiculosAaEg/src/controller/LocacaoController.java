@@ -249,7 +249,7 @@ public class LocacaoController {
     public static void AlterarLocacao()
     {
         System.out.println("Informe o Cpf da locação que deseja alterar");
-        String codCpf = leitor.next();        
+        String codCpf = leitor.nextLine();        
         
         ClientePessoaFisicaModel cpf = PesquisarLocacaoPorCpf(codCpf);
         
@@ -290,7 +290,7 @@ public class LocacaoController {
             System.out.println("Digite o código do novo Cpf, (Anterior: " + antcpf.getClietePF().getCpf() + "): ");
             String novoCpf = leitor.nextLine();
             
-            ClientePessoaFisicaModel ncpf = PesquisarLocacaoPorCpf(novoCpf);
+            ClientePessoaFisicaModel ncpf = PessoaFisicaController.PesquisarPessoaPorCpf(codCpf);
             
             if(ncpf != null)           
             {
@@ -303,7 +303,7 @@ public class LocacaoController {
 
                 if(cr != null)
                 {
-                    System.out.println("Digite o novo cpf para loja, (Anterior: " + antcpf.getLoja().getCnpj() + "): ");
+                    System.out.println("Digite o novo CNPJ para loja, (Anterior: " + antcpf.getLoja().getCnpj() + "): ");
                     String cpfLoja = leitor.nextLine();
 
                     LojaModel lj = LojaController.PesquisarLojaPorCnpj(cpfLoja);
@@ -330,12 +330,12 @@ public class LocacaoController {
                 }
                    
             }
-        }else           
+        }else if(cpf != null && tipo.equalsIgnoreCase("PJ"))          
         {
             System.out.println("Digite o código do novo Cnpj, (Anterior: " + antcnpj.getClientePj().getCnpj() + "): ");
             String novoCnpj = leitor.nextLine();
 
-                ClientePessoaJuridicaModel ncnpj = PessoaJuricaController.PesquisarPessoaPorCnpj(novoCnpj);
+            ClientePessoaJuridicaModel ncnpj = PessoaJuricaController.PesquisarPessoaPorCnpj(novoCnpj);
             
             if(ncnpj != null)
             {    
