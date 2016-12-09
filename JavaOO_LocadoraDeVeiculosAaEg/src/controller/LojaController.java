@@ -73,7 +73,7 @@ public class LojaController {
        
     }
     
-    public static LojaModel PesquisarPessoaPorCnpj (String codCnpj) 
+    public static LojaModel PesquisarLojaPorCnpj (String codCnpj) 
     {
         
         for(LojaModel j : BancoDeDadosLocadora.getTabelaLoja())

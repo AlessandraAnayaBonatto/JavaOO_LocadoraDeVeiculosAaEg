@@ -50,7 +50,7 @@ public class LojaView {
         System.out.print("Informe O CNPJ: ");
         String cnpjLoja = leitor.nextLine(); 
         
-        LojaModel lj = LojaController.PesquisarPessoaPorCnpj(cnpjLoja);
+        LojaModel lj = LojaController.PesquisarLojaPorCnpj(cnpjLoja);
         
         System.out.println("");
         if(lj != null){
