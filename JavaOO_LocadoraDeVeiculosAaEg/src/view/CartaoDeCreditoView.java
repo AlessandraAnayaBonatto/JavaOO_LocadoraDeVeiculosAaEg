@@ -18,15 +18,16 @@ public class CartaoDeCreditoView {
     public static void ExibirCartoesCadastrados() 
     {
         //Leitura e exibição de todos os médicos cadastrados na Lista
+        System.out.println("***Lista de Cartões cadastrados***");
         for(CartaoDeCreditoModel c : BancoDeDadosLocadora.getTabelaCartaoDeCredito())
         {
-            System.out.println("***Lista de Cartões cadastrados***");
+            
             System.out.println("Numero do cartão:" + c.getNumeroCartao());
             System.out.println("Nome do titular:" + c.getNomeDoTitular());
             System.out.println("Código de segurança:" + c.getCodigoSegurança());
             System.out.println("Mês de validade do cartão:" + c.getMesValidade());
             System.out.println("Ano de validade do cartão:" + c.getAnoValidade());            
-                    
+            System.out.println("--- --- --- --- --- --- ---");        
         }
        
     }

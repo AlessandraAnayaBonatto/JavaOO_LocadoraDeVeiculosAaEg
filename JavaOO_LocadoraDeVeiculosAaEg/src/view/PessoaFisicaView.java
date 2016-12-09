@@ -18,9 +18,9 @@ public class PessoaFisicaView {
     public static void ExibirPessoaFisica() 
     {
         //Leitura e exibição de todos os médicos cadastrados na Lista
+        System.out.println("***Lista de pessoas fisicas cadastradas***");
         for(ClientePessoaFisicaModel f : BancoDeDadosLocadora.getTabelaClientesPessoaFisica())
         {
-            System.out.println("***Lista de pessoas fisicas cadastradas***");
             System.out.println("Nome:" + f.getNome());
             System.out.println("CPF:" + f.getCpf());
             System.out.println("Telefone:" + f.getTelefone());
@@ -41,7 +41,7 @@ public class PessoaFisicaView {
             System.out.println("Estado emissor CNH:" + f.getEstadoEmissor()); 
             System.out.println("Categoria CNH:" + f.getCategoria()); 
             System.out.println("Tempo de CNH:" + f.getTempo()); 
-               
+            System.out.println("--- --- --- --- --- --- ---");   
         }
        
     }

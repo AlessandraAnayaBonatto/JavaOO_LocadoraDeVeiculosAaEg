@@ -17,9 +17,9 @@ public class CarroView {
     public static void ExibirCarros() 
     {
         //Leitura e exibição de todos os médicos cadastrados na Lista
+        System.out.println("***Lista de carros cadastrados***");
         for(CarroModel c : BancoDeDadosLocadora.getTabelaCarro())
         {
-            System.out.println("***Lista de carros cadastrados***");
             System.out.println("Código:" + c.getCodigo());
             System.out.println("Marca:" + c.getMarca());
             System.out.println("Modelo:" + c.getModelo());
@@ -38,6 +38,9 @@ public class CarroView {
             System.out.println("Quilometragem:" + c.getQuilometragem());
             System.out.println("Valores:" + c.getValores());
             System.out.println("Taxas:" + c.getTaxas());
+            System.out.println("--- --- --- --- --- --- ---");
         }
     }
+    
+   
 }

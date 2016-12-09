@@ -19,9 +19,9 @@ public class PessoaJuridicaView {
     public static void ExibirPessoaJuridica() 
     {
         //Leitura e exibição de todos os médicos cadastrados na Lista
+        System.out.println("***Lista de pessoas juridicas cadastradas***");
         for(ClientePessoaJuridicaModel j : BancoDeDadosLocadora.getTabelaClientePessoaJuridica())
         {
-            System.out.println("***Lista de pessoas juridicas cadastradas***");
             System.out.println("Nome:" + j.getNome());
             System.out.println("CNPJ:" + j.getCnpj());
             System.out.println("Telefone:" + j.getTelefone());
@@ -34,7 +34,7 @@ public class PessoaJuridicaView {
             System.out.println("Estado:" + j.getEstado());   
             System.out.println("Cidade:" + j.getCidade());   
             System.out.println("Bairro:" + j.getBairro());   
-               
+            System.out.println("--- --- --- --- --- --- ---");   
         }
        
     }

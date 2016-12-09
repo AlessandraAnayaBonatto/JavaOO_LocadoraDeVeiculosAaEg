@@ -19,9 +19,9 @@ public class LojaView {
     public static void ExibirLojasCadastradas() 
     {
         //Leitura e exibição de todos os médicos cadastrados na Lista
+        System.out.println("***Lista de Lojas cadastradas***");
         for(LojaModel l : BancoDeDadosLocadora.getTabelaLoja())
         {
-            System.out.println("***Lista de Lojas cadastradas***");
             System.out.println("Nome da loja:" + l.getNome());
             System.out.println("CNPJ da loja:" + l.getCnpj());
             System.out.println("Horaio de inicio de funcionamento da loja:" + l.getHorarioInicio());
@@ -35,7 +35,7 @@ public class LojaView {
             System.out.println("Estado:" + l.getEstado());
             System.out.println("Cidade:" + l.getCidade());
             System.out.println("Bairro:" + l.getBairro());
-            
+            System.out.println("--- --- --- --- --- --- ---");
                     
         }
        
