@@ -71,11 +71,10 @@ public class MenuView {
             System.out.println("27 - Exibir Lista de Locações Pessoa Fisica");
             System.out.println("28 - Exibir Lista de Locações Pessoa Juridica");
             System.out.println("29 - Exibir locação por CPF ");
-            System.out.println("30 - Exibir locação por CNPJ ");
-            System.out.println("31 - Alterar Locação");
-            System.out.println("32 - Ecluir Locação");
+            System.out.println("30 - Alterar Locação");
+            System.out.println("31 - Ecluir Locação");
 
-            System.out.println("33 - SAIR");        
+            System.out.println("32 - SAIR");        
             System.out.print("Digite sua Opção AQUI: ");
         
         try{  
@@ -182,15 +181,12 @@ public class MenuView {
                     LocacaoView.ExibirLocacaoPorCpf();
                     break;
                 case 30:
-                    LocacaoView.ExibirLocacaoPorCnpj();
-                    break;
-                case 31:
                     LocacaoController.AlterarLocacao();
                     break;
-                case 32:
+                case 31:
                     LocacaoController.ExcluirLocacao();
                     break;
-                case 33:
+                case 32:
                     break;
                 }
             opcao = 0; 
@@ -201,7 +197,7 @@ public class MenuView {
             System.out.println("");
             leitor.nextLine();
             } 
-        }while (opcao != 33);
+        }while (opcao != 32);
         
     }
 }
